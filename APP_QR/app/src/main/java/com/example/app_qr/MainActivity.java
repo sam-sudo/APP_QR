@@ -268,7 +268,12 @@ public class MainActivity extends AppCompatActivity {
         // ArrayList<Encapsulador> datos = new ArrayList<Encapsulador>();
         ArrayList<String> datos = new ArrayList<String>();
         //datos.add(new Encapsulador(R.mipmap.ic_launcher, "PREGUNTA", "Tiempo que has tardado"));
-        datos.add("En la pregunta 1 has tardado");
+        datos.add("Código 1 --> 8");
+        datos.add("Código 1 --> 3");
+        datos.add("Código 1 --> 1");
+        datos.add("Código 1 --> 8");
+        datos.add("Código 1 --> 3");
+        datos.add("Código 1 --> 1");
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, datos);
         lista.setAdapter(adapter);
