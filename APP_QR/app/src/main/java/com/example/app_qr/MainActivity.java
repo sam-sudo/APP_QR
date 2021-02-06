@@ -18,6 +18,7 @@ import android.view.View;
 import android.webkit.URLUtil;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.NumberPicker;
 import android.widget.RadioButton;
 
 import com.example.app_qr.Adapters.MyPagerAdapter;
@@ -42,19 +43,15 @@ public class MainActivity extends AppCompatActivity {
     private TextView countDown;
     private ListView lista;
     private ViewPager viewPager;
-    private CountDownTimer mcountDownTimer;
     private SurfaceView visorCamara;
 
 
-    private static long startTimeInMilis = 7000;//1200000
+    private static long startTimeInMilis = 1200000;//1200000
     private boolean butonStart = false;
     private CameraSource fuenteCamara;
     private final int MY_PERMISSIONS_REQUEST_CAMERA = 1;
     private String token = "";
     private String tokenanterior = "";
-
-
-
 
 
 
@@ -128,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
 //    }
 
     private void startCountDownTime() {//Este metodo inicia la cuenta atras
-        mcountDownTimer = new CountDownTimer(startTimeInMilis, 1000) {
+        CountDownTimer mcountDownTimer = new CountDownTimer(startTimeInMilis, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 startTimeInMilis = millisUntilFinished;

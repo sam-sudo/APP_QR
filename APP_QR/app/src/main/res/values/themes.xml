@@ -13,4 +13,15 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="NumberPickerTheme" parent="Theme.AppCompat.Light">
+        <item name="dividerPadding">50dp</item>
+        <item name="android:dividerPadding">50dp</item>
+        <item name="android:dividerHeight">50dp</item>
+        <item name="colorAccent">#FFEB3B</item>
+        <!--To remove divider of the number picker -->
+        <item name="colorControlNormal">#000000</item>
+        <item name="android:textColorPrimary">#000000</item>
+        <item name="android:background">#8BC34A</item>
+    </style>
 </resources>
