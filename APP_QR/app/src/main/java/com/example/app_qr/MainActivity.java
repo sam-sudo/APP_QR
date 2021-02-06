@@ -37,22 +37,26 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
+
     private Button start;
     private TextView countDown;
-    private static long startTimeInMilis = 7000;//1200000
+    private ListView lista;
+    private ViewPager viewPager;
     private CountDownTimer mcountDownTimer;
-    private boolean butonStart = false;
-
-    ViewPager viewPager;
-
-    //
-
-    private CameraSource fuenteCamara;
     private SurfaceView visorCamara;
+
+
+    private static long startTimeInMilis = 7000;//1200000
+    private boolean butonStart = false;
+    private CameraSource fuenteCamara;
     private final int MY_PERMISSIONS_REQUEST_CAMERA = 1;
     private String token = "";
     private String tokenanterior = "";
-    private ListView lista;
+
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,23 +64,27 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         visorCamara = (SurfaceView) findViewById(R.id.visor);
+       // ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
+        viewPager = findViewById(R.id.pager);
         lista = findViewById(R.id.lista);
+        start = (Button)findViewById(R.id.inicio);
+        countDown = (TextView)findViewById(R.id.cronometro);
+
+        start.setEnabled(true);
+
         iniciaQR();
         listadoDeTiempo();
 
-        viewPager = findViewById(R.id.pager);
 
         MyPagerAdapter myPagerAdapter = new MyPagerAdapter(getSupportFragmentManager());
-        ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
         viewPager.setAdapter(myPagerAdapter);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
 
-        start = (Button)findViewById(R.id.inicio);
-        countDown = (TextView)findViewById(R.id.cronometro);
 
-        viewButtonStart();
+
+        //viewButtonStart();
 
         start.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -111,13 +119,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void viewButtonStart() {//Este metodo nos deshabilita el boton start cuando pulsamos en el para no poder modificar el tiempo del crono
-        if (!butonStart){
-            start.setEnabled(true);
-        }else {
-            start.setEnabled(false);
-        }
-    }
+//    private void viewButtonStart() {//Este metodo nos deshabilita el boton start cuando pulsamos en el para no poder modificar el tiempo del crono
+//        if (!butonStart){
+//            start.setEnabled(true);
+//        }else {
+//            start.setEnabled(false);
+//        }
+//    }
 
     private void startCountDownTime() {//Este metodo inicia la cuenta atras
         mcountDownTimer = new CountDownTimer(startTimeInMilis, 1000) {

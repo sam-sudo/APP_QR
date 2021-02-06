@@ -38,9 +38,9 @@ public class MyPagerAdapter extends FragmentStatePagerAdapter {
     public CharSequence getPageTitle(int position) {
         switch (position) {
             case 0:
-                return "Primera pregunta";
+                return "Codigo secréto";
             case 1:
-                return "SECTION 2";
+                return "PREGUNTAS";
         }
         return null;
     }

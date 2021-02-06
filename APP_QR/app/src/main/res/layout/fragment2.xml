@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:background="#E8284E">
 
@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:textSize="40dp"
         android:textStyle="bold"
-
+        android:textColor="@color/black"
         android:gravity="center"
         android:text="¿PREGUNTA?">
 
@@ -50,7 +50,7 @@
             <RadioButton android:id="@+id/req2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:maxWidth="250dp"
+                android:maxWidth="230dp"
                 android:text="respuesta 3 asdsadaaasdsadasdsdfdfsdfgfgddfgdfgdfdfad"
                 android:onClick="onRadioButtonClicked"/>
         </RadioGroup>
@@ -61,7 +61,7 @@
             android:scaleType="fitCenter"
             android:src="@drawable/index"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
         </androidx.appcompat.widget.AppCompatImageView>
 
@@ -70,7 +70,8 @@
     <Button
         android:id="@+id/btnReq"
         android:text="enviar respuesta"
-        android:layout_gravity="center"
+        android:layout_gravity="end"
+        android:layout_marginEnd="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
