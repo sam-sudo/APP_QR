@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#E8284E">
+
+    <TextView
+        android:id="@+id/questionTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="40dp"
+        android:textStyle="bold"
+
+        android:gravity="center"
+        android:text="¿PREGUNTA?">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:text="¿preguntaaaa a realizar?">
+
+    </TextView>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RadioButton android:id="@+id/req0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="respuesta 1"
+                android:onClick="onRadioButtonClicked"/>
+            <RadioButton android:id="@+id/req1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="respuesta 2"
+                android:onClick="onRadioButtonClicked"/>
+            <RadioButton android:id="@+id/req2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="250dp"
+                android:text="respuesta 3 asdsadaaasdsadasdsdfdfsdfgfgddfgdfgdfdfad"
+                android:onClick="onRadioButtonClicked"/>
+        </RadioGroup>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgReq"
+            android:layout_weight="1"
+            android:scaleType="fitCenter"
+            android:src="@drawable/index"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </androidx.appcompat.widget.AppCompatImageView>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnReq"
+        android:text="enviar respuesta"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </com.google.android.material.button.MaterialButton>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
