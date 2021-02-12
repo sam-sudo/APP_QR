@@ -7,8 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context=".MainActivity">
-
+    tools:context=".StartVideo">
 
     <LinearLayout
         android:padding="5dp"
