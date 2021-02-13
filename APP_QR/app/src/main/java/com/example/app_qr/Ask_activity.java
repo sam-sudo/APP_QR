@@ -1,4 +1,4 @@
-package com.example.app_qr.Fragments;
+package com.example.app_qr;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -20,7 +20,7 @@ import androidx.fragment.app.Fragment;
 import com.example.app_qr.Models.Ask;
 import com.example.app_qr.R;
 
-public class Fragment2 extends AppCompatActivity {
+public class Ask_activity extends AppCompatActivity {
 
     RadioButton req0;
     RadioButton req1;
@@ -72,6 +72,6 @@ public class Fragment2 extends AppCompatActivity {
     private Ask getAsk() {
         Log.d("samy", "generateAsk: aaaask");
 
-        return new Ask("eee","hola","que tal");
+        return new Ask("¿Que provincia es?","x","xx","xxx","Cádiz","Cádiz");
     }
 }

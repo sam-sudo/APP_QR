@@ -4,7 +4,6 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -20,7 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-import com.example.app_qr.Fragments.Fragment2;
+
 import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.barcode.Barcode;
@@ -209,7 +208,7 @@ public class App extends AppCompatActivity implements NumberPicker.OnValueChange
 //                            startActivity(browserIntent);
 
                         } else {
-                            Intent intent = new Intent(getApplicationContext(), Fragment2.class);
+                            Intent intent = new Intent(getApplicationContext(), Ask_activity.class);
                             startActivity(intent);
                             // comparte en otras apps
 //                            Intent shareIntent = new Intent();
