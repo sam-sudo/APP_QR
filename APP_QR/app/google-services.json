@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "811061410961",
+    "project_id": "appandalucia-24536",
+    "storage_bucket": "appandalucia-24536.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:811061410961:android:98ac556b6b85b9153e9330",
+        "android_client_info": {
+          "package_name": "com.example.app_qr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "811061410961-q110hrskcdurb6iu50s45seu7l43dsvf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.app_qr",
+            "certificate_hash": "f177216abb6621abc204ad90751519023e0bc74d"
+          }
+        },
+        {
+          "client_id": "811061410961-36arkpronfvov4cm3sv761rq7584tjc5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCe_P_8_g9wsGovwabN23tUoBfpH3K4zf0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "811061410961-36arkpronfvov4cm3sv761rq7584tjc5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

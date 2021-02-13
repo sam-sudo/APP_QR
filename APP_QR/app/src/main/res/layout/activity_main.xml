@@ -1,127 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#959595"
     tools:context=".StartVideo">
 
     <LinearLayout
-        android:padding="5dp"
-        android:layout_margin="10dp"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
-            android:textColor="#FF0000"
-            android:textSize="10dp"
-            android:textAlignment="center"
-            android:text="FALLOS:"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"></TextView>
-        <TextView
-            android:textColor="#FF0000"
-            android:textSize="10dp"
-            android:textAlignment="center"
-            android:text="0"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"></TextView>
-
-        <Button
-            android:id="@+id/inicio"
-            android:text="START"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"></Button>
-        <TextView
             android:id="@+id/cronometro"
-            android:textColor="#FF0000"
-            android:textSize="25dp"
+            android:textColor="#050505"
+            android:textSize="30dp"
             android:layout_gravity="center"
             android:textAlignment="center"
             android:layout_weight="1"
             android:text="20:00"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"></TextView>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_weight="1.5"
-        android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="wrap_content">
-
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tabs"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            </com.google.android.material.tabs.TabLayout>
-
-        </com.google.android.material.appbar.AppBarLayout>
-
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/pager"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-
-
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_weight="1.5"
-        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:orientation="vertical"
         >
+
+        <TextView
+            android:id="@+id/questionTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="40dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:text="CODIGO FINAL">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:text="Introduce el código final">
+
+        </TextView>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_horizontal"
-                android:layout_margin="10dp"
+            android:layout_height="100dp"
+            android:background="#000000">
+
+            <NumberPicker
+                android:id="@+id/numberPicker1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
                 android:layout_weight="1"
-                android:orientation="vertical">
+                android:background="#FFFFFF"
+                android:descendantFocusability="blocksDescendants"
+                android:showDividers="none"
+                android:solidColor="#575757"
+                android:theme="@style/NumberPickerTheme"></NumberPicker>
 
-                <SurfaceView
-                    android:id="@+id/visor"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_horizontal"
-                android:layout_margin="10dp"
+            <NumberPicker
+                android:id="@+id/numberPicker2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:descendantFocusability="blocksDescendants"
                 android:layout_weight="1"
-                android:orientation="vertical">
+                android:background="#FFFFFF"
+                android:solidColor="#575757"></NumberPicker>
 
-                <ListView
-                    android:id="@+id/lista"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"></ListView>
+            <NumberPicker
+                android:id="@+id/numberPicker3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:descendantFocusability="blocksDescendants"
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:solidColor="#575757"></NumberPicker>
 
+            <NumberPicker
+                android:id="@+id/numberPicker4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:descendantFocusability="blocksDescendants"
+                android:background="#FFFFFF"
+                android:solidColor="#575757"></NumberPicker>
 
-            </LinearLayout>
+            <NumberPicker
+                android:id="@+id/numberPicker5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:descendantFocusability="blocksDescendants"
+                android:background="#FFFFFF"
+                android:solidColor="#575757"></NumberPicker>
+
+            <NumberPicker
+                android:id="@+id/numberPicker6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:descendantFocusability="blocksDescendants"
+                android:background="#FFFFFF"
+                android:solidColor="#575757"></NumberPicker>
+
         </LinearLayout>
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal">
+
+
+        <SurfaceView
+            android:id="@+id/visor"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ListView
+            android:id="@+id/lista"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></ListView>
+    </LinearLayout>
+
+
+
 
 </LinearLayout>

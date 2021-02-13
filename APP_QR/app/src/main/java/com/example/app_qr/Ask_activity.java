@@ -1,24 +1,15 @@
 package com.example.app_qr;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.util.AttributeSet;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RadioButton;
-import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
 import com.example.app_qr.Models.Ask;
-import com.example.app_qr.R;
 
 public class Ask_activity extends AppCompatActivity {
 
@@ -30,7 +21,7 @@ public class Ask_activity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment2);
+        setContentView(R.layout.ask_activity);
 
     }
 

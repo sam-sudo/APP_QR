@@ -47,7 +47,7 @@ public class App extends AppCompatActivity implements NumberPicker.OnValueChange
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_main);
         //startCountDownTime();
 
         cameraView = (SurfaceView) findViewById(R.id.visor);
