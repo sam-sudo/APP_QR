@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">APP_QR</string>
+    <string-array name="Spinner_items">
+        <item>1º Bachiller</item>
+        <item>2º Bachiller</item>
+        <item>1º ESO</item>
+        <item>2º ESO</item>
+        <item>3º ESO</item>
+        <item>4º ESO</item>
+    </string-array>
 </resources>

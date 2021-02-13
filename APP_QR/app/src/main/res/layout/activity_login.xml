@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#203040"
+    android:gravity="center"
+    android:layout_gravity="center"
+    tools:context=".Login">
+
+    <ImageView
+
+        android:src="@drawable/samadri"
+        android:layout_width="200dp"
+        android:layout_height="200dp"></ImageView>
+    <LinearLayout
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:layout_margin="10dp"
+            android:textColorHint="#B1B1B1"
+            android:padding="20dp"
+            android:background="@drawable/input"
+            android:textColor="#FFFFFF"
+            android:hint="Nombre"
+            android:id="@+id/nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></EditText>
+
+        <EditText
+            android:layout_margin="10dp"
+            android:textColorHint="#B1B1B1"
+            android:padding="20dp"
+            android:background="@drawable/input"
+            android:textColor="#FFFFFF"
+            android:hint="Apellidos"
+            android:id="@+id/apellidos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></EditText>
+
+        <LinearLayout
+            android:gravity="end"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="18dp"
+                android:layout_margin="10dp"
+                android:textColor="#FFFFFF"
+                android:text="Selecciona tu grupo:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></TextView>
+            <Spinner
+                android:padding="10dp"
+                android:entries="@array/Spinner_items"
+                android:layout_margin="10dp"
+                android:id="@+id/spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></Spinner>
+        </LinearLayout>
+
+
+
+        <Button
+            android:textColor="#FFFFFF"
+            android:layout_margin="10dp"
+            android:background="@drawable/btn_color_fondo"
+            android:text="Continuar"
+            android:id="@+id/continuar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></Button>
+    </LinearLayout>
+
+
+
+</LinearLayout>
