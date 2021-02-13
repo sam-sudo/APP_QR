@@ -1,6 +1,7 @@
 package com.example.app_qr.Fragments;
 
 import android.content.Context;
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.AttributeSet;
@@ -36,6 +37,7 @@ public class Fragment1 extends Fragment {
         numberPicker4.setMaxValue(9);
         numberPicker5.setMaxValue(9);
         numberPicker6.setMaxValue(9);
+
 
         return view;
     }
