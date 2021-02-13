@@ -20,8 +20,10 @@ import androidx.fragment.app.Fragment;
 import com.example.app_qr.Models.Ask;
 import com.example.app_qr.R;
 
-public class Ask_activity extends AppCompatActivity {
+import java.util.ArrayList;
 
+public class Ask_activity extends AppCompatActivity {
+    ArrayList<Ask> preguntas = new ArrayList<>();
     RadioButton req0;
     RadioButton req1;
     RadioButton req2;
@@ -31,6 +33,8 @@ public class Ask_activity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment2);
+
+        preguntas.add(new Ask("¿Qué nueva forma geométrica presente en las células epiteliales, fue descubierta por la Universidad de Sevilla en 2018?", "Prisma triangular", "Prismoide", "Escutoide", "Icosaedro", "Escutoide"));
 
     }
 

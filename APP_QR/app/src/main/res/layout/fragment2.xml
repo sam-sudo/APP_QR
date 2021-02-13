@@ -51,7 +51,12 @@
             <RadioButton android:id="@+id/req2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="respuesta 3 asdsadaaasdsadasdsdfdfsdfgfgddfgdfgdfdfad"
+                android:text="respuesta 3"
+                android:onClick="onRadioButtonClicked"/>
+            <RadioButton android:id="@+id/req3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="respuesta 3"
                 android:onClick="onRadioButtonClicked"/>
         </RadioGroup>
 
@@ -63,9 +68,9 @@
         android:id="@+id/btnReq"
         android:text="enviar respuesta"
         android:layout_gravity="end"
-        android:src="@drawable/arrowright"
+        android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
         android:elevation="3dp"
-        android:backgroundTint="#45D5B8"
+        android:backgroundTint="#00BCD4"
         android:layout_marginEnd="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
@@ -73,6 +78,7 @@
     </com.google.android.material.floatingactionbutton.FloatingActionButton>
 
     <androidx.appcompat.widget.AppCompatImageView
+        android:layout_margin="10dp"
         android:id="@+id/imgReq"
         android:layout_gravity="center"
         android:scaleType="fitCenter"

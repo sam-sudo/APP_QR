@@ -25,5 +25,9 @@
         <item name="android:background">#8BC34A</item>
     </style>
 
+    <style name="ColorListView" parent="Theme.AppCompat.Light">
+        <item name="android:textColorPrimary">#FFFFFF</item>
+    </style>
+
 
 </resources>
