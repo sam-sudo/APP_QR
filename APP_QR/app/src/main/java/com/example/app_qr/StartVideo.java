@@ -23,18 +23,28 @@ public class StartVideo extends AppCompatActivity {
 
         hiddeMe = findViewById(R.id.end);
         hiddeMe.setVisibility(View.INVISIBLE);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            // verificamos la version de ANdroid que sea al menos la M para mostrar
+            // el dialog de la solicitud de la camara
+            if (shouldShowRequestPermissionRationale(
+                    Manifest.permission.CAMERA)) ;
+            requestPermissions(new String[]{Manifest.permission.CAMERA},
+                    MY_PERMISSIONS_REQUEST_CAMERA);
+        }
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 hiddeMe.setVisibility(View.VISIBLE);
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    // verificamos la version de ANdroid que sea al menos la M para mostrar
-                    // el dialog de la solicitud de la camara
-                    if (shouldShowRequestPermissionRationale(
-                            Manifest.permission.CAMERA)) ;
-                    requestPermissions(new String[]{Manifest.permission.CAMERA},
-                            MY_PERMISSIONS_REQUEST_CAMERA);
-                }
+//                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//                    // verificamos la version de ANdroid que sea al menos la M para mostrar
+//                    // el dialog de la solicitud de la camara
+//                    if (shouldShowRequestPermissionRationale(
+//                            Manifest.permission.CAMERA)) ;
+//                    requestPermissions(new String[]{Manifest.permission.CAMERA},
+//                            MY_PERMISSIONS_REQUEST_CAMERA);
+//                }
                 return;
             }
         }, 5000);

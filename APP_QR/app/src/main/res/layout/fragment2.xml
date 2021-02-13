@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#E8284E">
 
@@ -31,10 +31,11 @@
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:orientation="horizontal"
+        android:layout_margin="20dp"
         android:layout_height="wrap_content">
 
         <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <RadioButton android:id="@+id/req0"
@@ -50,32 +51,36 @@
             <RadioButton android:id="@+id/req2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:maxWidth="230dp"
                 android:text="respuesta 3 asdsadaaasdsadasdsdfdfsdfgfgddfgdfgdfdfad"
                 android:onClick="onRadioButtonClicked"/>
         </RadioGroup>
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/imgReq"
-            android:layout_weight="1"
-            android:scaleType="fitCenter"
-            android:src="@drawable/index"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
 
-        </androidx.appcompat.widget.AppCompatImageView>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
-    <Button
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnReq"
         android:text="enviar respuesta"
         android:layout_gravity="end"
+        android:src="@drawable/arrowright"
+        android:elevation="3dp"
+        android:backgroundTint="#45D5B8"
         android:layout_marginEnd="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-    </Button>
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgReq"
+        android:layout_gravity="center"
+        android:scaleType="fitCenter"
+        android:src="@drawable/index"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </androidx.appcompat.widget.AppCompatImageView>
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>

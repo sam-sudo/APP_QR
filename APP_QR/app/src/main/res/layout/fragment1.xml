@@ -29,61 +29,66 @@
     </TextView>
 
     <LinearLayout
-        android:background="#000000"
-        android:gravity="center"
         android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="100dp">
+        android:layout_height="100dp"
+        android:background="#000000"
+        android:gravity="center">
+
         <NumberPicker
-            android:solidColor="#575757"
-            android:background="#FFFFFF"
             android:id="@+id/numberPicker1"
-            android:theme="@style/NumberPickerTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
             android:showDividers="none"
-            android:layout_weight="1"
-            android:layout_margin="4dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"></NumberPicker>
-        <NumberPicker
             android:solidColor="#575757"
-            android:layout_weight="1"
-            android:background="#FFFFFF"
+            android:theme="@style/NumberPickerTheme"></NumberPicker>
+
+        <NumberPicker
             android:id="@+id/numberPicker2"
-            android:layout_margin="4dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"></NumberPicker>
-        <NumberPicker
-            android:solidColor="#575757"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
             android:layout_weight="1"
             android:background="#FFFFFF"
+            android:solidColor="#575757"></NumberPicker>
+
+        <NumberPicker
             android:id="@+id/numberPicker3"
-            android:layout_margin="4dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"></NumberPicker>
-        <NumberPicker
-            android:solidColor="#575757"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
             android:layout_weight="1"
             android:background="#FFFFFF"
+            android:solidColor="#575757"></NumberPicker>
+
+        <NumberPicker
             android:id="@+id/numberPicker4"
-            android:layout_margin="4dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"></NumberPicker>
-        <NumberPicker
-            android:solidColor="#575757"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
             android:layout_weight="1"
             android:background="#FFFFFF"
+            android:solidColor="#575757"></NumberPicker>
+
+        <NumberPicker
             android:id="@+id/numberPicker5"
-            android:layout_margin="4dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"></NumberPicker>
-        <NumberPicker
-            android:solidColor="#575757"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
             android:layout_weight="1"
             android:background="#FFFFFF"
+            android:solidColor="#575757"></NumberPicker>
+
+        <NumberPicker
             android:id="@+id/numberPicker6"
-            android:layout_margin="4dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"></NumberPicker>
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:solidColor="#575757"></NumberPicker>
 
     </LinearLayout>
     <Button

@@ -3,6 +3,7 @@ package com.example.app_qr;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -11,119 +12,87 @@ import android.util.Log;
 import android.util.SparseArray;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-import android.view.View;
 import android.webkit.URLUtil;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
-import android.widget.RadioButton;
+import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-import androidx.viewpager.widget.ViewPager;
-
-import com.example.app_qr.Adapters.MyPagerAdapter;
+import com.example.app_qr.Fragments.Fragment2;
 import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
-import com.google.android.material.tabs.TabLayout;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Locale;
 
-public class App extends AppCompatActivity {
+public class App extends AppCompatActivity implements NumberPicker.OnValueChangeListener {
 
-    private Button start;
     private TextView countDown;
     private ListView lista;
-    private ViewPager viewPager;
     private SurfaceView cameraView;
-
+    NumberPicker numberPicker1, numberPicker2, numberPicker3, numberPicker4, numberPicker5, numberPicker6;
 
 
     private static long startTimeInMilis = 1200000;//1200000
-    private boolean butonStart = false;
     private CameraSource cameraSource;
     private final int MY_PERMISSIONS_REQUEST_CAMERA = 1;
     private String token = "";
     private String lastToken = "";
-
+    private MediaPlayer mp;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-
+        setContentView(R.layout.activity_main2);
+        //startCountDownTime();
 
         cameraView = (SurfaceView) findViewById(R.id.visor);
-        // ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
-        viewPager = findViewById(R.id.pager);
         lista = findViewById(R.id.lista);
-        start = (Button)findViewById(R.id.inicio);
         countDown = (TextView)findViewById(R.id.cronometro);
-
-        start.setEnabled(true);
+        mp = MediaPlayer.create(this,R.raw.numberpicker);
 
         initQR();
         TimeList();
+        numberPicker();
 
 
-        MyPagerAdapter myPagerAdapter = new MyPagerAdapter(getSupportFragmentManager());
-        viewPager.setAdapter(myPagerAdapter);
-
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
-        tabLayout.setupWithViewPager(viewPager);
-
-
-
-        //viewButtonStart();
-
-        start.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                start.setEnabled(false);
-                startCountDownTime();
-            }
-        });
 
 
     }
 
-    public void onRadioButtonClicked(View view) {
-        // Is the button now checked?
-        boolean checked = ((RadioButton) view).isChecked();
 
-        // Check which radio button was clicked
-        switch(view.getId()) {
-            case R.id.req0:
-                if (checked)
-                    // Pirates are the best
-                    break;
-            case R.id.req1:
-                if (checked)
-                    // Ninjas rule
-                    break;
-            case R.id.req2:
-                if (checked)
-                    // Ninjas rule
-                    break;
-        }
+    private void numberPicker() {
+        numberPicker1 = (NumberPicker)findViewById(R.id.numberPicker1);
+        numberPicker2 = (NumberPicker)findViewById(R.id.numberPicker2);
+        numberPicker3 = (NumberPicker)findViewById(R.id.numberPicker3);
+        numberPicker4 = (NumberPicker)findViewById(R.id.numberPicker4);
+        numberPicker5 = (NumberPicker)findViewById(R.id.numberPicker5);
+        numberPicker6 = (NumberPicker)findViewById(R.id.numberPicker6);
+
+        numberPicker1.setMaxValue(9);
+        numberPicker2.setMaxValue(9);
+        numberPicker3.setMaxValue(9);
+        numberPicker4.setMaxValue(9);
+        numberPicker5.setMaxValue(9);
+        numberPicker6.setMaxValue(9);
+
+        numberPicker1.setOnValueChangedListener(this);
+        numberPicker2.setOnValueChangedListener(this);
+        numberPicker3.setOnValueChangedListener(this);
+        numberPicker4.setOnValueChangedListener(this);
+        numberPicker5.setOnValueChangedListener(this);
+        numberPicker6.setOnValueChangedListener(this);
 
     }
 
-//    private void viewButtonStart() {//Este metodo nos deshabilita el boton start cuando pulsamos en el para no poder modificar el tiempo del crono
-//        if (!butonStart){
-//            start.setEnabled(true);
-//        }else {
-//            start.setEnabled(false);
-//        }
-//    }
+
+
+
 
     private void startCountDownTime() {//Este metodo inicia la cuenta atras
         CountDownTimer mcountDownTimer = new CountDownTimer(startTimeInMilis, 1000) {
@@ -141,6 +110,8 @@ public class App extends AppCompatActivity {
             }
         }.start();
     }
+
+
 
     private void updateTime() {//Este metodo actualiza el texto del cronometro
         int minutos = (int) (startTimeInMilis / 1000) / 60;
@@ -231,17 +202,21 @@ public class App extends AppCompatActivity {
                         lastToken = token;
                         Log.i("token", token);
 
+
                         if (URLUtil.isValidUrl(token)) {
                             // si es una URL valida abre el navegador
-                            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(token));
-                            startActivity(browserIntent);
+//                            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(token));
+//                            startActivity(browserIntent);
+
                         } else {
+                            Intent intent = new Intent(getApplicationContext(), Fragment2.class);
+                            startActivity(intent);
                             // comparte en otras apps
-                            Intent shareIntent = new Intent();
-                            shareIntent.setAction(Intent.ACTION_SEND);
-                            shareIntent.putExtra(Intent.EXTRA_TEXT, token);
-                            shareIntent.setType("text/plain");
-                            startActivity(shareIntent);
+//                            Intent shareIntent = new Intent();
+//                            shareIntent.setAction(Intent.ACTION_SEND);
+//                            shareIntent.putExtra(Intent.EXTRA_TEXT, token);
+//                            shareIntent.setType("text/plain");
+//                            startActivity(shareIntent);
                         }
 
                         new Thread(new Runnable() {
@@ -282,4 +257,10 @@ public class App extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
+        mp.start();
+
+
+    }
 }

@@ -20,6 +20,7 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity android:name=".GameOver"></activity>
         <activity android:name=".App"></activity>
+        <activity android:name=".Fragments.Fragment2"></activity>
         <activity android:name=".StartVideo">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,6 +28,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
 
     </application>
 
