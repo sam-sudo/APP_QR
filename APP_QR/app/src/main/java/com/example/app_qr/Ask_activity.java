@@ -93,7 +93,9 @@ public class Ask_activity extends AppCompatActivity {
 
         preguntas.add(new Ask("Estados miembros de la Unión Europea con menor extensión que Andalucía son...","Austria, Bélgica, Croacia, Chequia e Irlanda, Luxemburgo y Malta.","Chipre, Dinamarca, Eslovaquia, Eslovenia, Estonia, Holanda.","Noruega, Suecia, Reino Unido y Polonia.","La a y la b son correctas, la c no.","La a y la b son correctas, la c no."));
 
-        //preguntas.add(new Ask("Lienzo de Velázquez que lleva por título...","Las Infantas","Las Mayoralas","Las Damiselas","Las Meninas","Las Meninas", R.drawable.meninas));
+        
+        preguntas.add(new Ask("Lienzo de Velázquez que lleva por título...","Las Infantas","Las Mayoralas","Las Damiselas","Las Meninas","Las Meninas"));
+
     }
 
     public void onRadioButtonClicked(View view) {
