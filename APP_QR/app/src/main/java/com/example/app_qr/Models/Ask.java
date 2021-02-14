@@ -3,6 +3,8 @@ package com.example.app_qr.Models;
 
 import com.example.app_qr.R;
 
+import java.util.Objects;
+
 public class Ask {
 
 
@@ -105,5 +107,24 @@ public class Ask {
                 ", reqCorrect='" + reqCorrect + '\'' +
                 ", imgReq=" + imgReq +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Ask ask1 = (Ask) o;
+        return imgReq == ask1.imgReq &&
+                Objects.equals(ask, ask1.ask) &&
+                Objects.equals(req0, ask1.req0) &&
+                Objects.equals(req1, ask1.req1) &&
+                Objects.equals(req2, ask1.req2) &&
+                Objects.equals(req3, ask1.req3) &&
+                Objects.equals(reqCorrect, ask1.reqCorrect);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(ask, req0, req1, req2, req3, reqCorrect, imgReq);
     }
 }

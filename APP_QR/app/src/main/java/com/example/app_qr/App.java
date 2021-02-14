@@ -200,6 +200,7 @@ public class App extends AppCompatActivity implements NumberPicker.OnValueChange
                         // guardamos el ultimo token proceado
                         lastToken = token;
                         Log.i("token", token);
+                        Log.i("lat token", lastToken);
 
 
                         if (URLUtil.isValidUrl(token)) {
