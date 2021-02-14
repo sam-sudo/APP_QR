@@ -77,6 +77,7 @@
                 android:theme="@style/NumberPickerTheme"></NumberPicker>
 
             <NumberPicker
+                android:theme="@style/NumberPickerTheme"
                 android:id="@+id/numberPicker2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -87,6 +88,7 @@
                 android:solidColor="#575757"></NumberPicker>
 
             <NumberPicker
+                android:theme="@style/NumberPickerTheme"
                 android:id="@+id/numberPicker3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -97,6 +99,7 @@
                 android:solidColor="#575757"></NumberPicker>
 
             <NumberPicker
+                android:theme="@style/NumberPickerTheme"
                 android:id="@+id/numberPicker4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -107,6 +110,7 @@
                 android:solidColor="#575757"></NumberPicker>
 
             <NumberPicker
+                android:theme="@style/NumberPickerTheme"
                 android:id="@+id/numberPicker5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -117,6 +121,7 @@
                 android:solidColor="#575757"></NumberPicker>
 
             <NumberPicker
+                android:theme="@style/NumberPickerTheme"
                 android:id="@+id/numberPicker6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

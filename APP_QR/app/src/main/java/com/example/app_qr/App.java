@@ -25,7 +25,9 @@ import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 public class App extends AppCompatActivity implements NumberPicker.OnValueChangeListener {
@@ -41,6 +43,7 @@ public class App extends AppCompatActivity implements NumberPicker.OnValueChange
     private final int MY_PERMISSIONS_REQUEST_CAMERA = 1;
     private String token = "";
     private String lastToken = "";
+    int endToken = 0;
     private MediaPlayer mp;
 
 
@@ -54,6 +57,7 @@ public class App extends AppCompatActivity implements NumberPicker.OnValueChange
         lista = findViewById(R.id.lista);
         countDown = (TextView)findViewById(R.id.cronometro);
         mp = MediaPlayer.create(this,R.raw.numberpicker);
+     
 
         initQR();
         TimeList();
@@ -202,22 +206,12 @@ public class App extends AppCompatActivity implements NumberPicker.OnValueChange
                         Log.i("token", token);
                         Log.i("lat token", lastToken);
 
-
-                        if (URLUtil.isValidUrl(token)) {
-                            // si es una URL valida abre el navegador
-//                            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(token));
-//                            startActivity(browserIntent);
-
-                        } else {
+                        if(continueWhithTheOrder(token)){
                             Intent intent = new Intent(getApplicationContext(), Ask_activity.class);
                             startActivity(intent);
-                            // comparte en otras apps
-//                            Intent shareIntent = new Intent();
-//                            shareIntent.setAction(Intent.ACTION_SEND);
-//                            shareIntent.putExtra(Intent.EXTRA_TEXT, token);
-//                            shareIntent.setType("text/plain");
-//                            startActivity(shareIntent);
-                        }
+                        }else {
+                            Log.d("prueba", "hemos entrado");
+                            Toast.makeText(getApplicationContext(), "No es el codigo QR que te toca", Toast.LENGTH_SHORT).show();}
 
                         new Thread(new Runnable() {
                             public void run() {
@@ -262,5 +256,15 @@ public class App extends AppCompatActivity implements NumberPicker.OnValueChange
         mp.start();
 
 
+    }
+
+    boolean continueWhithTheOrder(String token){
+
+        if(endToken + 1 == Integer.parseInt(token))
+        {
+            endToken = Integer.parseInt(token);
+            return true;
+        }
+        return false;
     }
 }
