@@ -11,8 +11,8 @@
     tools:context=".Login">
 
     <ImageView
-
-        android:src="@drawable/samadri"
+        android:id="@+id/imagen"
+        android:src="@drawable/logo"
         android:layout_width="200dp"
         android:layout_height="200dp"></ImageView>
     <LinearLayout
@@ -24,7 +24,7 @@
         <EditText
             android:layout_margin="10dp"
             android:textColorHint="#B1B1B1"
-            android:padding="20dp"
+            android:padding="15dp"
             android:background="@drawable/input"
             android:textColor="#FFFFFF"
             android:hint="Nombre"
@@ -35,7 +35,7 @@
         <EditText
             android:layout_margin="10dp"
             android:textColorHint="#B1B1B1"
-            android:padding="20dp"
+            android:padding="15dp"
             android:background="@drawable/input"
             android:textColor="#FFFFFF"
             android:hint="Apellidos"
@@ -49,6 +49,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
+                android:id="@+id/selecciona"
                 android:textSize="18dp"
                 android:layout_margin="10dp"
                 android:textColor="#FFFFFF"
