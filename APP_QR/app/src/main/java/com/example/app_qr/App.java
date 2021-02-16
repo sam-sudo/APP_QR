@@ -20,6 +20,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
+import com.example.app_qr.Auxiliar.AskAuxiliar;
 import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.barcode.Barcode;
@@ -62,6 +63,7 @@ public class App extends AppCompatActivity implements NumberPicker.OnValueChange
         initQR();
         TimeList();
         numberPicker();
+        AskAuxiliar.randomCode();
 
 
 
@@ -93,8 +95,19 @@ public class App extends AppCompatActivity implements NumberPicker.OnValueChange
 
     }
 
+    public void validateNumberPicker(){
 
+        if (    numberPicker1.getValue() == AskAuxiliar.randomList.get(0)&&
+                numberPicker2.getValue() == AskAuxiliar.randomList.get(1)&&
+                numberPicker3.getValue() == AskAuxiliar.randomList.get(2)&&
+                numberPicker4.getValue() == AskAuxiliar.randomList.get(3)&&
+                numberPicker5.getValue() == AskAuxiliar.randomList.get(4)&&
+                numberPicker6.getValue() == AskAuxiliar.randomList.get(5) ){
 
+            Intent poema = new Intent(this, Poem.class);
+            startActivity(poema);
+        }
+    }
 
 
     private void startCountDownTime() {//Este metodo inicia la cuenta atras
@@ -254,6 +267,7 @@ public class App extends AppCompatActivity implements NumberPicker.OnValueChange
     @Override
     public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
         mp.start();
+        validateNumberPicker();
 
 
     }

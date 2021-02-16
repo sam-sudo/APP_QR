@@ -3,6 +3,8 @@ package com.example.app_qr.Models;
 
 import com.example.app_qr.R;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Ask {
@@ -16,6 +18,8 @@ public class Ask {
     String req3;
     String reqCorrect;
     int imgReq;
+
+
 
     public Ask(String ask, String req0, String req1, String req2,String req3, String reqCorrect, int imgReq) {
         this.ask = ask;
@@ -95,6 +99,9 @@ public class Ask {
     public void setImgReq(int imgReq) {
         this.imgReq = imgReq;
     }
+
+
+
 
     @Override
     public String toString() {
