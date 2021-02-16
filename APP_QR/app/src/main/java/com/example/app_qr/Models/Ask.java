@@ -1,6 +1,10 @@
 package com.example.app_qr.Models;
 
 
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
+
 import com.example.app_qr.R;
 
 import java.util.Objects;
@@ -8,6 +12,9 @@ import java.util.Objects;
 public class Ask {
 
 
+    public Ask( ) {
+
+    }
 
     String ask;
     String req0;
@@ -109,6 +116,7 @@ public class Ask {
                 '}';
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -123,6 +131,7 @@ public class Ask {
                 Objects.equals(reqCorrect, ask1.reqCorrect);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public int hashCode() {
         return Objects.hash(ask, req0, req1, req2, req3, reqCorrect, imgReq);

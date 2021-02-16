@@ -8,4 +8,7 @@ public class AskAuxiliar {
 
     public static ArrayList<Ask> askDoneList = new ArrayList();
 
+    public static ArrayList<String> datos = new ArrayList<String>();
+
+
 }

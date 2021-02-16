@@ -20,6 +20,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
+import com.example.app_qr.Auxiliar.AskAuxiliar;
 import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.barcode.Barcode;
@@ -211,7 +212,14 @@ public class App extends AppCompatActivity implements NumberPicker.OnValueChange
                             startActivity(intent);
                         }else {
                             Log.d("prueba", "hemos entrado");
-                            Toast.makeText(getApplicationContext(), "No es el codigo QR que te toca", Toast.LENGTH_SHORT).show();}
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    Toast.makeText(getApplicationContext(), "No es el codigo QR que te toca", Toast.LENGTH_SHORT).show();
+                                }
+                            });
+
+                        }
 
                         new Thread(new Runnable() {
                             public void run() {
@@ -236,17 +244,8 @@ public class App extends AppCompatActivity implements NumberPicker.OnValueChange
 
     }
     public void TimeList(){
-        // ArrayList<Encapsulador> datos = new ArrayList<Encapsulador>();
-        ArrayList<String> datos = new ArrayList<String>();
-        //datos.add(new Encapsulador(R.mipmap.ic_launcher, "PREGUNTA", "Tiempo que has tardado"));
-        datos.add("Código 1 --> 8");
-        datos.add("Código 1 --> 3");
-        datos.add("Código 1 --> 1");
-        datos.add("Código 1 --> 8");
-        datos.add("Código 1 --> 3");
-        datos.add("Código 1 --> 1");
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, datos);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, AskAuxiliar.datos);
         lista.setAdapter(adapter);
     }
 
