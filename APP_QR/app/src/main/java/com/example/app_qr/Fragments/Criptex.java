@@ -310,7 +310,10 @@ public class Criptex extends Fragment implements NumberPicker.OnValueChangeListe
             return true;
         }*/
 
-        if(Integer.parseInt(token) == circuitList.get(contadorTokens++)){
+        if(Integer.parseInt(token) == circuitList.get(contadorTokens)){
+            Log.d("circuitList", "" + contadorTokens);
+            contadorTokens++;
+            Log.d("circuitList", "" + contadorTokens);
             return true;
         }
             return false;
@@ -324,8 +327,9 @@ public class Criptex extends Fragment implements NumberPicker.OnValueChangeListe
            circuitList = new ArrayList<>(circuit);
            Collections.shuffle(circuitList);
            System.out.println("------------------------------------" + circuitList);
-           Log.d("circuitList", "" + circuitList);
+
        }
+        Log.d("circuitList", "" + circuitList);
 
 
     }
