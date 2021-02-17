@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.app_qr.Auxiliar.AskAuxiliar;
 
@@ -23,6 +24,7 @@ public class Login extends AppCompatActivity {
     Button continuar;
     ImageView imagen;
     TextView selecciona;
+    public static String nombreStr, apellidosStr, grupoStr;
 
     //static public String[] lista = {"1º Bachiller","2º Bachiller","1º ESO", "2º ESO", "3º ESO", "4º ESO"};
     @Override
@@ -31,23 +33,23 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         nombre = (EditText) findViewById(R.id.nombre);
-        apellidos = (EditText)findViewById(R.id.apellidos);
-        grupo = (Spinner)findViewById(R.id.spinner);
-        continuar = (Button)findViewById(R.id.continuar);
-        imagen = (ImageView)findViewById(R.id.imagen);
-        selecciona = (TextView)findViewById(R.id.selecciona);
+        apellidos = (EditText) findViewById(R.id.apellidos);
+        grupo = (Spinner) findViewById(R.id.spinner);
+        continuar = (Button) findViewById(R.id.continuar);
+        imagen = (ImageView) findViewById(R.id.imagen);
+        selecciona = (TextView) findViewById(R.id.selecciona);
 
         ArrayAdapter adapter = ArrayAdapter.createFromResource(this, R.array.Spinner_items, R.layout.color_spinner_layout);
 
-        TranslateAnimation an = new TranslateAnimation(0.0f,  0.0f,  -1600.0f,  0.0f);
+        TranslateAnimation an = new TranslateAnimation(0.0f, 0.0f, -1600.0f, 0.0f);
         an.setDuration(1000);
         imagen.startAnimation(an);
 
-        TranslateAnimation an1 = new TranslateAnimation(-1600.0f,  0.0f,  0.0f,  0.0f);
+        TranslateAnimation an1 = new TranslateAnimation(-1600.0f, 0.0f, 0.0f, 0.0f);
         an1.setDuration(1000);
         nombre.startAnimation(an1);
 
-        TranslateAnimation an3 = new TranslateAnimation( 1600.0f,  0.0f,  0.0f,  0.0f);
+        TranslateAnimation an3 = new TranslateAnimation(1600.0f, 0.0f, 0.0f, 0.0f);
         an3.setDuration(1000);
         apellidos.startAnimation(an3);
 
@@ -63,11 +65,29 @@ public class Login extends AppCompatActivity {
         continuar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), StartVideo.class);
-                startActivity(intent);
-                finish();
+
+                nombreStr = nombre.getText().toString();
+                apellidosStr = apellidos.getText().toString();
+                grupoStr = grupo.getSelectedItem().toString();
+                if (!validate(nombreStr, apellidosStr)) {
+                    Intent intent = new Intent(getApplicationContext(), StartVideo.class);
+                    startActivity(intent);
+                    finish();
+
+                } else {
+                    Toast.makeText(getApplicationContext(), "Por favor introduce nombre y apellidos", Toast.LENGTH_LONG).show();
+                }
             }
         });
+    }
+
+
+    public boolean validate(String nombre, String apellidos) {
+        if (nombre.length() == 0 && apellidos.length() == 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 

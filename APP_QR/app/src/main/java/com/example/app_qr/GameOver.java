@@ -19,12 +19,13 @@ public class GameOver extends AppCompatActivity {
 //        super.onBackPressed();
         AlertDialog.Builder builder = new AlertDialog.Builder(GameOver.this);
         builder.setTitle("¡¡¡CUIDADO!!!");
-        builder.setMessage("Si aceptas se cerrará la aplicacción y el juego habrá acabdo");
+        builder.setMessage("Si aceptas se cerrará la aplicacción y el juego habrá acabado");
 
         builder.setPositiveButton("Salir", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 finish();
+
             }
         });
 

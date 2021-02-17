@@ -30,10 +30,10 @@ public class Poem extends AppCompatActivity {
 
         // Create a new user with a first and last name
         Map<String, Object> users = new HashMap<>();
-        users.put("username", "Ada");
-        users.put("lastname", "Lovelace");
+        users.put("username", Login.nombreStr);
+        users.put("lastname", Login.apellidosStr);
         users.put("time", "15000");
-        users.put("group", "2º DAM");
+        users.put("group", Login.grupoStr);
 
         // Add a new document with a generated ID
         db.collection("users")
@@ -66,7 +66,6 @@ public class Poem extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 finish();
-                onDestroy();
             }
         });
 

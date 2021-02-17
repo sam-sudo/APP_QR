@@ -14,7 +14,7 @@ import com.google.android.material.tabs.TabLayout;
 public class Main extends AppCompatActivity {
     TabLayout tabLayout;
     ViewPager viewPager;
-    TabItem tab1, tab2, tab3;
+    TabItem tab1, tab2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +23,6 @@ public class Main extends AppCompatActivity {
         viewPager = (ViewPager)findViewById(R.id.viewPager);
         tab1 = (TabItem)findViewById(R.id.tab1);
         tab2 = (TabItem)findViewById(R.id.tab2);
-        tab3 = (TabItem)findViewById(R.id.tab3);
 
 
         PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
@@ -79,7 +78,7 @@ public class Main extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 finish();
-                onDestroy();
+
             }
         });
 
@@ -92,4 +91,6 @@ public class Main extends AppCompatActivity {
         AlertDialog dialog = builder.create();
         dialog.show();
     }
+
+
 }

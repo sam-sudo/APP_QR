@@ -28,11 +28,6 @@
                     android:id="@+id/tab2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"></com.google.android.material.tabs.TabItem>
-                <com.google.android.material.tabs.TabItem
-                    android:text="🔎"
-                    android:id="@+id/tab3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"></com.google.android.material.tabs.TabItem>
             </com.google.android.material.tabs.TabLayout>
     </LinearLayout>
 

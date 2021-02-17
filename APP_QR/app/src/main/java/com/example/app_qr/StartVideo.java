@@ -2,19 +2,26 @@ package com.example.app_qr;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.viewpager.widget.ViewPager;
 
 import android.Manifest;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 
 import android.widget.Button;
+import android.widget.MediaController;
+import android.widget.VideoView;
 
 public class StartVideo extends AppCompatActivity {
+    VideoView videoView;
     private final int MY_PERMISSIONS_REQUEST_CAMERA = 1;
     Button hiddeMe;
     @Override
@@ -22,8 +29,18 @@ public class StartVideo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.video);
         hiddeMe = (Button) findViewById(R.id.end);
-
         hiddeMe = findViewById(R.id.end);
+        videoView = (VideoView)findViewById(R.id.video);
+        String path = "android.resource://" + getPackageName() + "/" + R.raw.presentacion;
+        Uri uri = Uri.parse(path);
+        videoView.setVideoURI(uri);
+
+        MediaController mediaController = new MediaController(this);
+        videoView.setMediaController(mediaController);
+        mediaController.setAnchorView(videoView);
+
+
+
         hiddeMe.setVisibility(View.INVISIBLE);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -56,7 +73,8 @@ public class StartVideo extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(getApplication(), Main.class);
                 startActivity(i);
-                finishAffinity();
+                finish();
+                //onDestroy();
             }
         });
 
@@ -70,12 +88,13 @@ public class StartVideo extends AppCompatActivity {
 //        super.onBackPressed();
         AlertDialog.Builder builder = new AlertDialog.Builder(StartVideo.this);
         builder.setTitle("¡¡¡CUIDADO!!!");
-        builder.setMessage("Si aceptas se cerrará la aplicacción y el juego habrá acabdo");
+        builder.setMessage("Si aceptas se cerrará la aplicacción y el juego habrá acabado");
 
         builder.setPositiveButton("Salir", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 finish();
+
             }
         });
 
@@ -88,4 +107,6 @@ public class StartVideo extends AppCompatActivity {
         AlertDialog dialog = builder.create();
         dialog.show();
     }
+
+
 }

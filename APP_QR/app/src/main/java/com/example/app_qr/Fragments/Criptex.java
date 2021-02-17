@@ -38,7 +38,13 @@ import com.google.android.gms.vision.barcode.BarcodeDetector;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Locale;
+import java.util.Set;
+
+import static com.example.app_qr.Auxiliar.AskAuxiliar.randomList;
 
 public class Criptex extends Fragment implements NumberPicker.OnValueChangeListener {
     private TextView countDown;
@@ -48,18 +54,21 @@ public class Criptex extends Fragment implements NumberPicker.OnValueChangeListe
 
 
     private static long startTimeInMilis;//1200000
+    static List<Integer> circuitList;
+    public static Set<Integer> circuit = new HashSet<Integer>();
     private CameraSource cameraSource;
     private final int MY_PERMISSIONS_REQUEST_CAMERA = 1;
     private String token = "";
     private String lastToken = "";
     private MediaPlayer mp;
     ArrayAdapter<String> adapter;
+    static int contadorTokens = 0;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.criptex , container ,false);
-        startTimeInMilis = 15000;
+        startTimeInMilis = 1200000;
         startCountDownTime();
 
 
@@ -78,6 +87,7 @@ public class Criptex extends Fragment implements NumberPicker.OnValueChangeListe
         initQR();
         TimeList();
         numberPicker();
+        numberCircuit();
         AskAuxiliar.randomCode();
         return view;
     }
@@ -115,12 +125,12 @@ public class Criptex extends Fragment implements NumberPicker.OnValueChangeListe
 
     public void validateNumberPicker(){
 
-        if (    numberPicker1.getValue() == AskAuxiliar.randomList.get(0)&&
-                numberPicker2.getValue() == AskAuxiliar.randomList.get(1)&&
-                numberPicker3.getValue() == AskAuxiliar.randomList.get(2)&&
-                numberPicker4.getValue() == AskAuxiliar.randomList.get(3)&&
-                numberPicker5.getValue() == AskAuxiliar.randomList.get(4)&&
-                numberPicker6.getValue() == AskAuxiliar.randomList.get(5) ){
+        if (    numberPicker1.getValue() == randomList.get(0)&&
+                numberPicker2.getValue() == randomList.get(1)&&
+                numberPicker3.getValue() == randomList.get(2)&&
+                numberPicker4.getValue() == randomList.get(3)&&
+                numberPicker5.getValue() == randomList.get(4)&&
+                numberPicker6.getValue() == randomList.get(5) ){
 
             Log.d("validateNumberPicker", "validateNumberPicker: comprobar");
                 Intent poema = new Intent(getContext(), Poem.class);
@@ -314,11 +324,29 @@ public class Criptex extends Fragment implements NumberPicker.OnValueChangeListe
 
     boolean continueWhithTheOrder(String token){
 
-        if(AskAuxiliar.endToken + 1 == Integer.parseInt(token))
-        {
-            AskAuxiliar.endToken = Integer.parseInt(token);
+
+        if(Integer.parseInt(token) == circuitList.get(contadorTokens)){
+            Log.d("circuitList", "" + contadorTokens);
+            contadorTokens++;
+            Log.d("circuitList", "" + contadorTokens);
             return true;
         }
-        return false;
+            return false;
+
+
     }
+
+    public static void numberCircuit(){
+       while(circuit.size() < 6){
+           circuit.add((int) (Math.random() * 6) + 1);
+           circuitList = new ArrayList<>(circuit);
+           Collections.shuffle(circuitList);
+           System.out.println("------------------------------------" + circuitList);
+
+       }
+        Log.d("circuitList", "" + circuitList);
+
+
+    }
+//  circuit.add((int) (Math.random()*6)+1);
 }
