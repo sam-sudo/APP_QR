@@ -20,12 +20,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".GameOver"></activity>
-        <activity android:name=".Main"></activity>
-        <activity android:name=".Ask_activity"></activity>
-        <activity android:name=".StartVideo"></activity>
-        <activity android:name=".Poem"></activity>
-        <activity android:name=".Login">
+        <activity android:name=".GameOver" ></activity>
+        <activity android:name=".Main" ></activity>
+        <activity android:name=".Ask_activity"  ></activity>
+        <activity android:name=".StartVideo" ></activity>
+        <activity android:name=".Poem" ></activity>
+        <activity android:name=".Login" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

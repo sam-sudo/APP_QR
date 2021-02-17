@@ -20,6 +20,7 @@ import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
@@ -46,12 +47,11 @@ public class Criptex extends Fragment implements NumberPicker.OnValueChangeListe
     NumberPicker numberPicker1, numberPicker2, numberPicker3, numberPicker4, numberPicker5, numberPicker6;
 
 
-    private static long startTimeInMilis = 1200000;//1200000
+    private static long startTimeInMilis;//1200000
     private CameraSource cameraSource;
     private final int MY_PERMISSIONS_REQUEST_CAMERA = 1;
     private String token = "";
     private String lastToken = "";
-    int endToken = 0;
     private MediaPlayer mp;
     ArrayAdapter<String> adapter;
 
@@ -59,7 +59,9 @@ public class Criptex extends Fragment implements NumberPicker.OnValueChangeListe
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.criptex , container ,false);
-        //startCountDownTime();
+        startTimeInMilis = 15000;
+        startCountDownTime();
+
 
         cameraView = (SurfaceView) view.findViewById(R.id.visor);
         lista = view.findViewById(R.id.lista);
@@ -80,12 +82,16 @@ public class Criptex extends Fragment implements NumberPicker.OnValueChangeListe
         return view;
     }
 
+
+
     @Override
     public void onResume() {
         super.onResume();
 //        Toast.makeText(getContext(),"resume",Toast.LENGTH_SHORT).show();
         adapter.notifyDataSetChanged();
     }
+
+
 
 
     private void numberPicker() {
@@ -116,9 +122,10 @@ public class Criptex extends Fragment implements NumberPicker.OnValueChangeListe
                 numberPicker5.getValue() == AskAuxiliar.randomList.get(4)&&
                 numberPicker6.getValue() == AskAuxiliar.randomList.get(5) ){
 
-
+            Log.d("validateNumberPicker", "validateNumberPicker: comprobar");
                 Intent poema = new Intent(getContext(), Poem.class);
                 startActivity(poema);
+                onDestroy();
 
 
 
@@ -136,9 +143,11 @@ public class Criptex extends Fragment implements NumberPicker.OnValueChangeListe
 
             @Override
             public void onFinish() {
-                Toast.makeText(getContext(), "TIEMPO TERMINADO", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity().getApplicationContext(), "TIEMPO TERMINADO", Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(getContext(), GameOver.class);
                 startActivity(intent);
+                //onDestroy();
+                getActivity().finish();
             }
         }.start();
     }
@@ -284,7 +293,18 @@ public class Criptex extends Fragment implements NumberPicker.OnValueChangeListe
     @Override
     public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
         mp.start();
-        validateNumberPicker();
+        picker.setOnScrollListener(new NumberPicker.OnScrollListener() {
+            @Override
+            public void onScrollStateChange(NumberPicker view, int scrollState) {
+                if(scrollState == SCROLL_STATE_IDLE){
+                    Log.d("validateNumberPicker", "validateNumberPicker: comprobar2");
+
+                    picker.postDelayed(() ->validateNumberPicker() ,1000);
+
+
+                }
+            }
+        });
 
 
 
@@ -294,9 +314,9 @@ public class Criptex extends Fragment implements NumberPicker.OnValueChangeListe
 
     boolean continueWhithTheOrder(String token){
 
-        if(endToken + 1 == Integer.parseInt(token))
+        if(AskAuxiliar.endToken + 1 == Integer.parseInt(token))
         {
-            endToken = Integer.parseInt(token);
+            AskAuxiliar.endToken = Integer.parseInt(token);
             return true;
         }
         return false;

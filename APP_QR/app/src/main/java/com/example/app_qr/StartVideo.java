@@ -56,11 +56,14 @@ public class StartVideo extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i = new Intent(getApplication(), Main.class);
                 startActivity(i);
+                finishAffinity();
             }
         });
 
 
     }
+
+
 
     @Override
     public void onBackPressed() {

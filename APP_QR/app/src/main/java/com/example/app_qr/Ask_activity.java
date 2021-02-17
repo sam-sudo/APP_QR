@@ -90,13 +90,13 @@ public class Ask_activity extends AppCompatActivity {
                     Log.d("alert", "onClick: eeerteeee");
                     AlertDialog.Builder builder = new AlertDialog.Builder(Ask_activity.this);
                     builder.setTitle("Respuesta incorrecta");
-                    builder.setMessage("Siguiente pregunta");
+                    builder.setMessage("Debes esperar 30 segndos para responder otra pregunta");
                     builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-
-                                 ask = getAsk();
-                                generateAsk(ask);
+                            finish();
+//                                 ask = getAsk();
+//                                generateAsk(ask);
 
                         }
                     });
@@ -110,6 +110,12 @@ public class Ask_activity extends AppCompatActivity {
         });
 
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        AskAuxiliar.endToken--;
     }
 
     private void asks() {

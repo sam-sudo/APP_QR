@@ -12,12 +12,15 @@ public class AskAuxiliar {
     public static ArrayList<Ask> askDoneList = new ArrayList();
     public static List<Integer> randomList = new ArrayList<Integer>();
     public static ArrayList<String> datos = new ArrayList<String>();
+    public static int endToken = 0;
+
 
 
 
     static int contador = 0;
 
     public static void randomCode(){
+        randomList.clear();
         randomList.add((int) (Math.random()*9));
         randomList.add((int) (Math.random()*9));
         randomList.add((int) (Math.random()*9));

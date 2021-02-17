@@ -65,14 +65,10 @@ public class Login extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), StartVideo.class);
                 startActivity(intent);
+                finish();
             }
         });
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        finish();
 
-    }
 }
