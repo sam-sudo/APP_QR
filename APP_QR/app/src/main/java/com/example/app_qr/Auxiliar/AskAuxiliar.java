@@ -11,6 +11,9 @@ public class AskAuxiliar {
 
     public static ArrayList<Ask> askDoneList = new ArrayList();
     public static List<Integer> randomList = new ArrayList<Integer>();
+    public static ArrayList<String> datos = new ArrayList<String>();
+
+
 
     static int contador = 0;
 
@@ -26,27 +29,10 @@ public class AskAuxiliar {
     }
 
     public static int getNumberCode(){
-        int response = 0;
-        switch (contador){
-            case  0:
-                response = randomList.get(0);
-            case  1:
-                response = randomList.get(1);
-            case  2:
-                response = randomList.get(2);
-            case  3:
-                response = randomList.get(3);
-            case  4:
-                response = randomList.get(4);
-            case  5:
-                response = randomList.get(5);
 
-        }
-            contador ++;
-            return response;
+            return randomList.get(contador++);
     }
 
-    public static ArrayList<String> datos = new ArrayList<String>();
 
 
 }

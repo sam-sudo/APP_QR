@@ -34,7 +34,7 @@ import java.util.Locale;
 public class App extends AppCompatActivity implements NumberPicker.OnValueChangeListener {
 
     private TextView countDown;
-    private ListView lista;
+    public static ListView lista;
     private SurfaceView cameraView;
     NumberPicker numberPicker1, numberPicker2, numberPicker3, numberPicker4, numberPicker5, numberPicker6;
 
@@ -46,6 +46,7 @@ public class App extends AppCompatActivity implements NumberPicker.OnValueChange
     private String lastToken = "";
     int endToken = 0;
     private MediaPlayer mp;
+    ArrayAdapter<String> adapter;
 
 
     @Override
@@ -70,6 +71,13 @@ public class App extends AppCompatActivity implements NumberPicker.OnValueChange
 
     }
 
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Toast.makeText(getApplicationContext(),"resume",Toast.LENGTH_SHORT).show();
+        adapter.notifyDataSetChanged();
+    }
 
     private void numberPicker() {
         numberPicker1 = (NumberPicker)findViewById(R.id.numberPicker1);
@@ -104,8 +112,11 @@ public class App extends AppCompatActivity implements NumberPicker.OnValueChange
                 numberPicker5.getValue() == AskAuxiliar.randomList.get(4)&&
                 numberPicker6.getValue() == AskAuxiliar.randomList.get(5) ){
 
-            Intent poema = new Intent(this, Poem.class);
-            startActivity(poema);
+
+                Intent poema = new Intent(this, Poem.class);
+                startActivity(poema);
+
+
         }
     }
 
@@ -256,9 +267,11 @@ public class App extends AppCompatActivity implements NumberPicker.OnValueChange
 
     }
     public void TimeList(){
+        AskAuxiliar.datos.add("CÓDIGOS");
+        adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, AskAuxiliar.datos);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, AskAuxiliar.datos);
         lista.setAdapter(adapter);
+
     }
 
 
@@ -268,7 +281,10 @@ public class App extends AppCompatActivity implements NumberPicker.OnValueChange
         validateNumberPicker();
 
 
+
     }
+
+
 
     boolean continueWhithTheOrder(String token){
 

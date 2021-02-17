@@ -64,19 +64,26 @@ public class Ask_activity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String numberCode = ""+AskAuxiliar.getNumberCode();
                 Log.d("response", "onClick: onclick" + correctResponse);
                 if(correctResponse){
                     //añadir numero a la lista
                     AlertDialog.Builder builder = new AlertDialog.Builder(Ask_activity.this);
                     builder.setTitle("¡¡¡CORRECTO!!!");
-                    builder.setMessage("Código : ");
+                    builder.setMessage("Código : " +numberCode);
 
-                    builder.create();
+                    builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                            correctResponse = false;
+                            AskAuxiliar.datos.add(numberCode);
+                            finish();
+                        }
+                    });
                     AlertDialog dialog = builder.create();
                     dialog.show();
-                    correctResponse = false;
-                    //AskAuxiliar.datos.add()
-                    finish();
+
 
                 }else {
                     correctResponse = false;
