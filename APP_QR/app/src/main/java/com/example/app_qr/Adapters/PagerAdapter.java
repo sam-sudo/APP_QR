@@ -26,8 +26,6 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
                 return new Mapa();
             case 1:
                 return new Criptex();
-            case 2:
-                return new FragmentWeb();
             default:
                 return null;
         }
