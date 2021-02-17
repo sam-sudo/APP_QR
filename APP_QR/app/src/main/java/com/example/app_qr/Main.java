@@ -72,7 +72,7 @@ public class Main extends AppCompatActivity {
 //        super.onBackPressed();
         AlertDialog.Builder builder = new AlertDialog.Builder(Main.this);
         builder.setTitle("¡¡¡CUIDADO!!!");
-        builder.setMessage("Si aceptas se cerrará la aplicacción y el juego habrá acabdo");
+        builder.setMessage("Si aceptas se cerrará la aplicacción y el juego habrá acabado");
 
         builder.setPositiveButton("Salir", new DialogInterface.OnClickListener() {
             @Override
