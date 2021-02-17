@@ -1,4 +1,4 @@
-package com.example.app_qr;
+package com.example.app_qr.Fragments;
 
 import android.Manifest;
 import android.content.Intent;
@@ -9,30 +9,37 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
 import android.util.SparseArray;
+import android.view.LayoutInflater;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-import android.webkit.URLUtil;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.Fragment;
+
+import com.example.app_qr.Ask_activity;
 import com.example.app_qr.Auxiliar.AskAuxiliar;
+import com.example.app_qr.GameOver;
+import com.example.app_qr.Poem;
+import com.example.app_qr.R;
 import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
+
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Locale;
 
-public class App extends AppCompatActivity implements NumberPicker.OnValueChangeListener {
-
+public class Criptex extends Fragment implements NumberPicker.OnValueChangeListener {
     private TextView countDown;
     private ListView lista;
     private SurfaceView cameraView;
@@ -47,37 +54,34 @@ public class App extends AppCompatActivity implements NumberPicker.OnValueChange
     int endToken = 0;
     private MediaPlayer mp;
 
-
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.criptex , container ,false);
         //startCountDownTime();
 
-        cameraView = (SurfaceView) findViewById(R.id.visor);
-        lista = findViewById(R.id.lista);
-        countDown = (TextView)findViewById(R.id.cronometro);
-        mp = MediaPlayer.create(this,R.raw.numberpicker);
-     
+        cameraView = (SurfaceView) view.findViewById(R.id.visor);
+        lista = view.findViewById(R.id.lista);
+        countDown = (TextView)view.findViewById(R.id.cronometro);
+        mp = MediaPlayer.create(getContext(),R.raw.numberpicker);
+        numberPicker1 = (NumberPicker)view.findViewById(R.id.numberPicker1);
+        numberPicker2 = (NumberPicker)view.findViewById(R.id.numberPicker2);
+        numberPicker3 = (NumberPicker)view.findViewById(R.id.numberPicker3);
+        numberPicker4 = (NumberPicker)view.findViewById(R.id.numberPicker4);
+        numberPicker5 = (NumberPicker)view.findViewById(R.id.numberPicker5);
+        numberPicker6 = (NumberPicker)view.findViewById(R.id.numberPicker6);
+
 
         initQR();
         TimeList();
         numberPicker();
         AskAuxiliar.randomCode();
-
-
-
-
+        return view;
     }
 
 
     private void numberPicker() {
-        numberPicker1 = (NumberPicker)findViewById(R.id.numberPicker1);
-        numberPicker2 = (NumberPicker)findViewById(R.id.numberPicker2);
-        numberPicker3 = (NumberPicker)findViewById(R.id.numberPicker3);
-        numberPicker4 = (NumberPicker)findViewById(R.id.numberPicker4);
-        numberPicker5 = (NumberPicker)findViewById(R.id.numberPicker5);
-        numberPicker6 = (NumberPicker)findViewById(R.id.numberPicker6);
+
 
         numberPicker1.setMaxValue(9);
         numberPicker2.setMaxValue(9);
@@ -104,7 +108,7 @@ public class App extends AppCompatActivity implements NumberPicker.OnValueChange
                 numberPicker5.getValue() == AskAuxiliar.randomList.get(4)&&
                 numberPicker6.getValue() == AskAuxiliar.randomList.get(5) ){
 
-            Intent poema = new Intent(this, Poem.class);
+            Intent poema = new Intent(getContext(), Poem.class);
             startActivity(poema);
         }
     }
@@ -120,8 +124,8 @@ public class App extends AppCompatActivity implements NumberPicker.OnValueChange
 
             @Override
             public void onFinish() {
-                Toast.makeText(getApplicationContext(), "TIEMPO TERMINADO", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(getApplicationContext(), GameOver.class);
+                Toast.makeText(getContext(), "TIEMPO TERMINADO", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(getContext(), GameOver.class);
                 startActivity(intent);
             }
         }.start();
@@ -144,13 +148,13 @@ public class App extends AppCompatActivity implements NumberPicker.OnValueChange
 
         // creo el detector qr
         BarcodeDetector barcodeDetector =
-                new BarcodeDetector.Builder(this)
+                new BarcodeDetector.Builder(getContext())
                         .setBarcodeFormats(Barcode.ALL_FORMATS)
                         .build();
 
         // creo la camara
         cameraSource = new CameraSource
-                .Builder(this, barcodeDetector)
+                .Builder(getContext(), barcodeDetector)
                 .setRequestedPreviewSize(1600, 1024)
                 .setAutoFocusEnabled(true) //you should add this feature
                 .build();
@@ -161,7 +165,7 @@ public class App extends AppCompatActivity implements NumberPicker.OnValueChange
             public void surfaceCreated(SurfaceHolder holder) {
 
                 // verifico si el usuario dio los permisos para la camara
-                if (ActivityCompat.checkSelfPermission(App.this, Manifest.permission.CAMERA)
+                if (ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.CAMERA)
                         != PackageManager.PERMISSION_GRANTED) {
 
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -220,11 +224,11 @@ public class App extends AppCompatActivity implements NumberPicker.OnValueChange
                         Log.i("lat token", lastToken);
 
                         if(continueWhithTheOrder(token)){
-                            Intent intent = new Intent(getApplicationContext(), Ask_activity.class);
+                            Intent intent = new Intent(getContext(), Ask_activity.class);
                             startActivity(intent);
                         }else {
                             Log.d("prueba", "hemos entrado");
-                            Toast.makeText(getApplicationContext(), "No es el codigo QR que te toca", Toast.LENGTH_SHORT).show();}
+                            Toast.makeText(getContext(), "No es el codigo QR que te toca", Toast.LENGTH_SHORT).show();}
 
                         new Thread(new Runnable() {
                             public void run() {
@@ -259,7 +263,7 @@ public class App extends AppCompatActivity implements NumberPicker.OnValueChange
         datos.add("Código 1 --> 3");
         datos.add("Código 1 --> 1");
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, datos);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, datos);
         lista.setAdapter(adapter);
     }
 

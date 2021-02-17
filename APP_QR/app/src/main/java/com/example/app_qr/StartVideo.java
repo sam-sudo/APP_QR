@@ -52,7 +52,7 @@ public class StartVideo extends AppCompatActivity {
         hiddeMe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplication(), App.class);
+                Intent i = new Intent(getApplication(), Main.class);
                 startActivity(i);
             }
         });
