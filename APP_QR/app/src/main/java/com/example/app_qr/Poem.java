@@ -44,7 +44,7 @@ public class Poem extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (autor.getText().toString().trim().toLowerCase().replace(" ", "").equals("antoniohernández") || autor.getText().toString().trim().toLowerCase().replace(" ", "").equals("antoniohernandez")){
-                    Toast.makeText(getApplicationContext(), "Nombre correcto", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "NOMBRE CORRECTO", Toast.LENGTH_SHORT).show();
                     // Create a new user with a first and last name
                     Map<String, Object> users = new HashMap<>();
                     users.put("username", Login.nombreStr);
