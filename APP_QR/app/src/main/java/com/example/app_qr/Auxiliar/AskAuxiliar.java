@@ -13,11 +13,7 @@ public class AskAuxiliar {
     public static List<Integer> randomList = new ArrayList<Integer>();
     public static ArrayList<String> datos = new ArrayList<String>();
     public static int endToken = 0;
-
-
-
-
-    static int contador = 0;
+    public static int contador = 0;
 
     public static void randomCode(){
         randomList.clear();
@@ -33,7 +29,7 @@ public class AskAuxiliar {
 
     public static int getNumberCode(){
 
-            return randomList.get(contador++);
+            return randomList.get(contador);
     }
 
 

@@ -257,6 +257,7 @@ public class Criptex extends Fragment implements NumberPicker.OnValueChangeListe
                         if(continueWhithTheOrder(token)){
                             Intent intent = new Intent(getContext(), Ask_activity.class);
                             startActivity(intent);
+
                         }else {
                             Log.d("prueba", "hemos entrado");
                             getActivity().runOnUiThread(new Runnable() {
@@ -327,7 +328,7 @@ public class Criptex extends Fragment implements NumberPicker.OnValueChangeListe
 
         if(Integer.parseInt(token) == circuitList.get(contadorTokens)){
             Log.d("circuitList", "" + contadorTokens);
-            contadorTokens++;
+
             Log.d("circuitList", "" + contadorTokens);
             return true;
         }else{

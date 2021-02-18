@@ -88,7 +88,9 @@ public class FragmentAsk extends Fragment implements View.OnClickListener {
                     builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-
+                            Log.d("circuitList", "onClick: contador" + Criptex.contadorTokens);
+                            Criptex.contadorTokens++;
+                            AskAuxiliar.contador++;
                             correctResponse = false;
                             AskAuxiliar.datos.add(numberCode);
                             getActivity().finish();//----------------------------------
@@ -280,4 +282,9 @@ public class FragmentAsk extends Fragment implements View.OnClickListener {
 
     }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+        getActivity().finish();
+    }
 }
