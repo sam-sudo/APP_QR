@@ -10,6 +10,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -38,10 +39,18 @@ public class StartVideo extends AppCompatActivity {
         MediaController mediaController = new MediaController(this);
         videoView.setMediaController(mediaController);
         mediaController.setAnchorView(videoView);
+        videoView.start();
+
+        videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                hiddeMe.setEnabled(true);
+            }
+        });
 
 
 
-        hiddeMe.setVisibility(View.INVISIBLE);
+
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             // verificamos la version de ANdroid que sea al menos la M para mostrar
@@ -51,22 +60,14 @@ public class StartVideo extends AppCompatActivity {
             requestPermissions(new String[]{Manifest.permission.CAMERA},
                     MY_PERMISSIONS_REQUEST_CAMERA);
         }
-
+        /*
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                hiddeMe.setVisibility(View.VISIBLE);
-//                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-//                    // verificamos la version de ANdroid que sea al menos la M para mostrar
-//                    // el dialog de la solicitud de la camara
-//                    if (shouldShowRequestPermissionRationale(
-//                            Manifest.permission.CAMERA)) ;
-//                    requestPermissions(new String[]{Manifest.permission.CAMERA},
-//                            MY_PERMISSIONS_REQUEST_CAMERA);
-//                }
+                hiddeMe.setEnabled(true);
                 return;
             }
-        }, 5000);
+        }, 5000);*/
 
         hiddeMe.setOnClickListener(new View.OnClickListener() {
             @Override

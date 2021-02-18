@@ -330,8 +330,9 @@ public class Criptex extends Fragment implements NumberPicker.OnValueChangeListe
             contadorTokens++;
             Log.d("circuitList", "" + contadorTokens);
             return true;
-        }
+        }else{
             return false;
+        }
 
 
     }
