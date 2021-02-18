@@ -11,7 +11,8 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <uses-feature android:name="android.hardware.camera" />
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -20,19 +21,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".GameOver"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".Main"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".Ask_activity"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".StartVideo"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".Finish"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".Poem"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".Login"
+        <activity
+            android:name=".GameOver"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Main"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Ask_activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".StartVideo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Finish"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Poem"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Incorrect"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Login"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,7 +51,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

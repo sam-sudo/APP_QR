@@ -21,7 +21,9 @@ import androidx.fragment.app.Fragment;
 import com.example.app_qr.Ask_activity;
 import com.example.app_qr.Auxiliar.AskAuxiliar;
 import com.example.app_qr.GameOver;
+import com.example.app_qr.Incorrect;
 import com.example.app_qr.Models.Ask;
+import com.example.app_qr.Poem;
 import com.example.app_qr.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -29,7 +31,9 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.logging.Handler;
 import java.util.logging.Level;
+import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 
 import uk.co.senab.photoview.PhotoViewAttacher;
@@ -63,6 +67,7 @@ public class FragmentAsk extends Fragment implements View.OnClickListener {
         req1.setOnClickListener(this);
         req2.setOnClickListener(this);
         req3.setOnClickListener(this);
+
 
         asks();
         try {
@@ -102,22 +107,34 @@ public class FragmentAsk extends Fragment implements View.OnClickListener {
 
                 }else {
                     correctResponse = false;
+                    new android.os.Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            Intent intent = new Intent(getActivity(), Incorrect.class);
+                            startActivity(intent);
+                        }
+                    }, 1000);
+
+                    /*correctResponse = false;
                     Log.d("alert", "onClick: eeerteeee");
                     AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                     builder.setTitle("Respuesta incorrecta");
                     builder.setMessage("Siguiente pregunta");
+
                     builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-
                             ask = getAsk();
                             generateAsk(ask);
 
                         }
                     });
+
                     builder.create();
-                    AlertDialog dialog = builder.create();
-                    dialog.show();
+                    builder.show();*/
+
+                    //AlertDialog dialog = builder.create();
+                    //dialog.show();
                 }
 
             }
