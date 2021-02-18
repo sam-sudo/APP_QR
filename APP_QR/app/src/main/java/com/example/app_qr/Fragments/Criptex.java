@@ -51,9 +51,10 @@ public class Criptex extends Fragment implements NumberPicker.OnValueChangeListe
     public static ListView lista;
     private SurfaceView cameraView;
     NumberPicker numberPicker1, numberPicker2, numberPicker3, numberPicker4, numberPicker5, numberPicker6;
+    public static String textFormater = "";
 
 
-    private static long startTimeInMilis;//1200000
+    public static long startTimeInMilis;//1200000
     static List<Integer> circuitList;
     public static Set<Integer> circuit = new HashSet<Integer>();
     private CameraSource cameraSource;
@@ -167,8 +168,7 @@ public class Criptex extends Fragment implements NumberPicker.OnValueChangeListe
     private void updateTime() {//Este metodo actualiza el texto del cronometro
         int minutos = (int) (startTimeInMilis / 1000) / 60;
         int segundos = (int) (startTimeInMilis / 1000) % 60;
-
-        String textFormater = String.format(Locale.getDefault(), "%02d:%02d", minutos, segundos);
+        textFormater = String.format(Locale.getDefault(), "%02d:%02d", minutos, segundos);
 
         countDown.setText(textFormater);
     }
