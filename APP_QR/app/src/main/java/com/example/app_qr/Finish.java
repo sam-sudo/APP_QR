@@ -45,7 +45,7 @@ public class Finish extends AppCompatActivity {
 //        super.onBackPressed();
         AlertDialog.Builder builder = new AlertDialog.Builder(Finish.this);
         builder.setTitle("¡¡¡GRACIAS POR PARTICIPAR!!!");
-        
+
         builder.setPositiveButton("Salir", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
