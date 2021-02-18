@@ -46,7 +46,6 @@ public class Ask {
         this.req2 = req2;
         this.req3 = req3;
         this.reqCorrect = reqCorrect;
-        
     }
 
 
