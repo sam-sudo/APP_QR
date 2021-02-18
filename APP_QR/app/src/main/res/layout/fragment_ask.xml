@@ -7,6 +7,7 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:layout_margin="10dp"
         android:id="@+id/questionTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,6 +20,7 @@
     </TextView>
 
     <TextView
+        android:layout_margin="10dp"
         android:textColor="@color/black"
         android:id="@+id/question"
         android:layout_width="match_parent"
@@ -37,33 +39,40 @@
         android:layout_margin="20dp"
         android:layout_height="wrap_content">
 
-        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <RadioButton android:id="@+id/req0"
-                android:layout_width="wrap_content"
+            android:layout_height="200dp">
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="respuesta 1"/>
-            <RadioButton android:id="@+id/req1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="respuesta 2"/>
-            <RadioButton android:id="@+id/req2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="respuesta 3"/>
-            <RadioButton android:id="@+id/req3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="respuesta 3"/>
-        </RadioGroup>
+                android:orientation="vertical">
+                <RadioButton android:id="@+id/req0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="respuesta 1"/>
+                <RadioButton android:id="@+id/req1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="respuesta 2"/>
+                <RadioButton android:id="@+id/req2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="respuesta 3"/>
+                <RadioButton android:id="@+id/req3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="respuesta 3"/>
+            </RadioGroup>
+        </ScrollView>
+
+
 
 
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_margin="10dp"
         android:id="@+id/btnReq"
         android:text="enviar respuesta"
         android:layout_gravity="end"
