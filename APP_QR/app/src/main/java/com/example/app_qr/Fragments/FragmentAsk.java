@@ -50,6 +50,8 @@ public class FragmentAsk extends Fragment implements View.OnClickListener {
     ImageView imgReq;
     boolean correctResponse = false;
     Ask ask = new Ask();
+    Ask randomAsk = new Ask();
+    boolean preuba = false;
 
     @Nullable
     @Override
@@ -67,6 +69,13 @@ public class FragmentAsk extends Fragment implements View.OnClickListener {
         req1.setOnClickListener(this);
         req2.setOnClickListener(this);
         req3.setOnClickListener(this);
+
+
+
+//        if(preuba){
+//            preuba = true;
+//            Toast.makeText(getContext(),"ey", Toast.LENGTH_SHORT).show();
+//        }
 
 
         asks();
@@ -95,6 +104,8 @@ public class FragmentAsk extends Fragment implements View.OnClickListener {
                         public void onClick(DialogInterface dialog, int which) {
                             Log.d("circuitList", "onClick: contador" + Criptex.contadorTokens);
                             Criptex.contadorTokens++;
+                            AskAuxiliar.askDoneList.add(randomAsk);
+                            Log.d("circuitList", "onClick: contador token " + AskAuxiliar.askDoneList.size());
                             AskAuxiliar.contador++;
                             correctResponse = false;
                             AskAuxiliar.datos.add(numberCode);
@@ -112,8 +123,13 @@ public class FragmentAsk extends Fragment implements View.OnClickListener {
                         public void run() {
                             Intent intent = new Intent(getActivity(), Incorrect.class);
                             startActivity(intent);
+                            ask = getAsk();
+                            generateAsk(ask);
                         }
                     }, 1000);
+
+
+
 
                     /*correctResponse = false;
                     Log.d("alert", "onClick: eeerteeee");
@@ -294,11 +310,11 @@ public class FragmentAsk extends Fragment implements View.OnClickListener {
 
     }
 
-    private Ask getAsk() {
+    private  Ask getAsk() {
 
         Random randomNumber = new Random();
         int askNumber = randomNumber.nextInt(asksList.size());
-        Ask randomAsk = asksList.get(askNumber);
+        randomAsk = asksList.get(askNumber);
         Log.d("randomNumber","getAask()" + askNumber);
         Log.d("randomNumber","getAask()" + askNumber + "  " +randomAsk.toString());
         Log.d("randomNumber","getAask()" + (AskAuxiliar.askDoneList.contains(randomAsk)));
@@ -317,16 +333,11 @@ public class FragmentAsk extends Fragment implements View.OnClickListener {
             randomAsk = asksList.get(askNumber);
             Log.d("randomNumber","getAask() --" + askNumber + "  " +randomAsk.toString());
         }
-        AskAuxiliar.askDoneList.add(randomAsk);
+//        AskAuxiliar.askDoneList.add(randomAsk);
         Log.d("randomNumber","getAask()size" + asksList.size());
         Log.d("randomNumber","getAask()size" + AskAuxiliar.askDoneList.size());
         return randomAsk;
 
     }
 
-    @Override
-    public void onPause() {
-        super.onPause();
-        getActivity().finish();
-    }
 }
