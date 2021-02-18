@@ -252,10 +252,11 @@ public class Criptex extends Fragment implements NumberPicker.OnValueChangeListe
                         // guardamos el ultimo token proceado
                         lastToken = token;
                         Log.i("token", token);
-                        Log.i("lat token", lastToken);
+                        Log.i("last token", lastToken);
 
                         if(continueWhithTheOrder(token)){
-                            Intent intent = new Intent(getContext(), Ask_activity.class);
+                            Log.d("failed", "receiveDetections: INTENT");
+                            Intent intent = new Intent(getContext(), Ask_activity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(intent);
 
                         }else {
@@ -279,7 +280,6 @@ public class Criptex extends Fragment implements NumberPicker.OnValueChangeListe
                                     }
                                 } catch (InterruptedException e) {
                                     // TODO Auto-generated catch block
-                                    Log.e("Error", "Waiting didnt work!!");
                                     e.printStackTrace();
                                 }
                             }

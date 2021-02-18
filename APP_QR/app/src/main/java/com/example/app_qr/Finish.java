@@ -50,7 +50,7 @@ public class Finish extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
-                finish();
+                finishAffinity();
             }
         });
 
