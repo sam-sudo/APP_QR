@@ -112,8 +112,13 @@ public class FragmentAsk extends Fragment implements View.OnClickListener {
                         public void run() {
                             Intent intent = new Intent(getActivity(), Incorrect.class);
                             startActivity(intent);
+                            ask = getAsk();
+                            generateAsk(ask);
                         }
                     }, 1000);
+
+
+
 
                     /*correctResponse = false;
                     Log.d("alert", "onClick: eeerteeee");
@@ -322,11 +327,5 @@ public class FragmentAsk extends Fragment implements View.OnClickListener {
         Log.d("randomNumber","getAask()size" + AskAuxiliar.askDoneList.size());
         return randomAsk;
 
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        getActivity().finish();
     }
 }
