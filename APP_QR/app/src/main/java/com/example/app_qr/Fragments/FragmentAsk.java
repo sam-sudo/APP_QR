@@ -184,13 +184,13 @@ public class FragmentAsk extends Fragment implements View.OnClickListener {
 
         asksList.add(new Ask("¿En qué año fue inaugurado el Museo Íbero de Jaén?","2017","2015","2018","2016","2017"));
 
-        asksList.add(new Ask("Teresa de Torres fue  la esposa del afamado Condestable Lucas de Iranzo y, cuando ésta  enviudó, gobernó la ciudad de Jaén durante:","El mismo tiempo que su marido","Más años que su marido","Menos años que su marido","Nunca llegó a gobernar"," Más años que su marido"));
+        asksList.add(new Ask("Teresa de Torres fue  la esposa del afamado Condestable Lucas de Iranzo y, cuando ésta  enviudó, gobernó la ciudad de Jaén durante:","El mismo tiempo que su marido","Más años que su marido","Menos años que su marido","Nunca llegó a gobernar","Más años que su marido"));
 
-        asksList.add(new Ask("Jaén es la capital mundial del:","Turismo interior","Aceite de oliva","Sector industrial","Sector servicios"," Aceite de oliva"));
+        asksList.add(new Ask("Jaén es la capital mundial del:","Turismo interior","Aceite de oliva","Sector industrial","Sector servicios","Aceite de oliva"));
 
         asksList.add(new Ask("La provincia de Jaén se caracteriza por:","Tener los baños árabes más grandes y mejor conservados de Europa"," Contar con la mayor cantidad de castillos por m2 de Europa","Ser la provincia española con una mayor superficie natural protegida","Todas son ciertas","Todas son ciertas"));
 
-        asksList.add(new Ask("En Andalucía, la agricultura supone:","El 76,4% de la producción"," El 26,4% de la producción"," El 18% de la producción"," El 5,6% de la producción"," El 5,6% de la producción"));
+        asksList.add(new Ask("En Andalucía, la agricultura supone:","El 76,4% de la producción"," El 26,4% de la producción"," El 18% de la producción","El 5,6% de la producción","El 5,6% de la producción"));
 
         asksList.add(new Ask("El sistema operativo:"," Es una placa","Es software","Hardware","Ninguna","Es software"));
 
@@ -198,7 +198,7 @@ public class FragmentAsk extends Fragment implements View.OnClickListener {
 
         asksList.add(new Ask("¿Cuál es el sistema de numeración empleado por los ordenadores?","El sistema binario","El sistema decimal","El sistema hexadecimal.","El sistema numérico","El sistema binario"));
 
-        asksList.add(new Ask("De los siguientes descuentos en un establecimiento ¿cuál escogerías?","La segunda unidad a mitad de precio","3X2","33% ","La semana sin IVA","33% "));
+        asksList.add(new Ask("De los siguientes descuentos en un establecimiento ¿cuál escogerías?","La segunda unidad a mitad de precio","3X2","33%","La semana sin IVA","33%"));
 
         asksList.add(new Ask("Se cree que los primeros habitantes se establecieron en esta histórica ciudad en 1100 a. C. Hogar de la Armada española desde el siglo XVIII, fue fundada por los fenicios.","Motril","Cádiz","Almuñécar","Málaga","Cádiz"));
 
@@ -210,9 +210,9 @@ public class FragmentAsk extends Fragment implements View.OnClickListener {
 
         asksList.add(new Ask("¿Qué héroe mitológico aparece en el escudo de Andalucía?","Hermes","Hércules","Hades","Helios","Hércules"));
 
-        asksList.add(new Ask("¿Por qué celebramos el 28 de febrero el día de Andalucía?","Porque el 28 de febrero de 1980 se formaron las ocho provincias que conforman la comunidad autónoma de Andalucía"," Porque el 28 de febrero de 1980 se celebró la Asamblea de Ronda por la que se formó la comunidad autónoma de Andalucía.","Porque el 28 de febrero de 1980 murió Blas Infante, padre del regionalismo andaluz."," Porque el 28 de febrero de 1980 se celebró un referéndum en el que los andaluces aceptaron la formación de la comunidad autónoma de Andalucía."," Porque el 28 de febrero de 1980 se celebró un referéndum en el que los andaluces aceptaron la formación de la comunidad autónoma de Andalucía."));
+        asksList.add(new Ask("¿Por qué celebramos el 28 de febrero el día de Andalucía?","Porque el 28 de febrero de 1980 se formaron las ocho provincias que conforman la comunidad autónoma de Andalucía"," Porque el 28 de febrero de 1980 se celebró la Asamblea de Ronda por la que se formó la comunidad autónoma de Andalucía.","Porque el 28 de febrero de 1980 murió Blas Infante, padre del regionalismo andaluz.","Porque el 28 de febrero de 1980 se celebró un referéndum en el que los andaluces aceptaron la formación de la comunidad autónoma de Andalucía.","Porque el 28 de febrero de 1980 se celebró un referéndum en el que los andaluces aceptaron la formación de la comunidad autónoma de Andalucía."));
 
-        asksList.add(new Ask(" La primera constitución española se realizó en Cádiz. ¿En qué año? ¿Cómo se le conoce?","En 1712 y se le conoce como La Paca.","En 1812 y se le conoce como La Pepa.","En 1812 y se le conoce como La Pepita","En 1912 y se le conoce como La Paquita.","En 1812 y se le conoce como La Pepa."));
+        asksList.add(new Ask(" La primera constitución española se realizó en Cádiz. ¿En qué año? ¿Cómo se le conoce?","En 1712 y se le conoce como La Paca.","En 1812 y se le conoce como La Pepa.","En 1812 y se le conoce como La Pepita","En 1912 y se le conoce como La Paquita.","En 1812 y se le conoce como La Pepa."));//
 
         asksList.add(new Ask("¿En qué año se aprobó el estatuto de autonomía de Andalucía y en qué año se reformó?","Se aprobó en 1980 y se reformó en 2004.","Se aprobó en 1982 y se reformó en 2006.","Se aprobó en 1981 y se reformó en 2005.","Se aprobó en 1981 y se reformó en 2007","Se aprobó en 1981 y se reformó en 2007"));
 
@@ -240,8 +240,33 @@ public class FragmentAsk extends Fragment implements View.OnClickListener {
 
         asksList.add(new Ask("Estados miembros de la Unión Europea con menor extensión que Andalucía son...","Austria, Bélgica, Croacia, Chequia e Irlanda, Luxemburgo y Malta.","Chipre, Dinamarca, Eslovaquia, Eslovenia, Estonia, Holanda.","Noruega, Suecia, Reino Unido y Polonia.","La a y la b son correctas, la c no.","La a y la b son correctas, la c no."));
 
-
         asksList.add(new Ask("Lienzo de Velázquez que lleva por título...","Las Infantas","Las Mayoralas","Las Damiselas","Las Meninas","Las Meninas", R.drawable.meninas));
+
+        asksList.add(new Ask("¿Cómo se llama la futbolista internacional de Jaén que visitó nuestro centro y está representada en nuestro muro de la igualdad?","Vicky Losada","Celia Jiménez","Jennifer Hermoso","Alexia Putellas","Celia Jiménez"));
+
+        asksList.add(new Ask("¿De la fusión de qué equipos surgió el actual Jaén Rugby?","CAU y Sporting Rugby","Cartujanos de Andalucía y Verdes Rugby","Ninguna es correcta","Lagarto y Abuelo Rugby","CAU y Sporting Rugby"));
+
+        asksList.add(new Ask("¿Cuál de estos deportes alternativos ha sido creado por un profesor de Andalucía?","Kinball","Foursquare","Gagaball","Pinfuvote","Pinfuvote"));
+
+        asksList.add(new Ask("¿Qué mujer científica que trabaja en el Centro Genyo en Granada ha sido galardonada con el premio “For women in Science” por encontrar nuevos tratamientos sobre leucemia infantil?","Francisca Molina","Verónica Ayllón","Ana Cámara","Agnés Gruart","Verónica Ayllón"));
+
+        asksList.add(new Ask("Un estudio de la UJA de junio del 2020 ha demostrado la relación entre las dietas altas en aceite de oliva virgen extra y la prevención de un tipo de cáncer. ¿De qué tipo de cáncer se trata?","Cáncer de pulmón","Cáncer colorrectal","Cáncer de mama","Cáncer de hígado","Cáncer colorrectal"));
+
+        asksList.add(new Ask("¿Qué novela de Almudena Grandes está ambientada en la Sierra Sur de Jaén?","Inés y la alegría","Las edades de Lulú","El lector de Julio Verne","La madre de Frankenstein","El lector de Julio Verne"));
+
+        asksList.add(new Ask("¿Cuál era el nombre del profesor de este instituto que publicó en 1933 la obra “Vocabulario andaluz”, considerado el primer repertorio léxico completo sobre el habla andaluza?","Manuel Seco","Antonio Alcalá Venceslada","Manuel Alvar","Eugenio Coseriu","Antonio Alcalá Venceslada"));
+
+        asksList.add(new Ask("¿Qué escritora gaditana se hizo famosa gracias a su personaje Manolito Gafotas?","Almudena Grandes","Anna Llenas","Ana Alcolea","Elvira Lindo","Elvira Lindo"));
+
+        asksList.add(new Ask("¿Cuál es el nombre de uno de los folcloristas más importantes de nuestro país y padre de dos insignes escritores andaluces de principios del siglo XX?","Juan Antonio de Torre Salvador","José María Tenorio Herrera","Federico de Castro y Fernández","Antonio Machado Álvarez","Antonio Machado Álvarez"));
+
+        asksList.add(new Ask("¿Quién escribió “Las crónicas de Al-Andalus” en 1970?","Washington Irving","Antonio Gala","Fernando Quiñones","Rafael Alberti","Fernando Quiñones"));
+
+        asksList.add(new Ask("¿A quién llamaba Cernuda “poeta cuya palabra lúcida es como el diamante”?","Luis de Góngora","Rafael Alberti","Federico García Lorca","Jorge Manrique","Luis de Góngora"));
+
+        asksList.add(new Ask("¿Cuál era el pseudónimo de la escritora Gertrudis Gómez de Avellaneda?","La Perla","La Peregrina","La Colorada","Pepita Jiménez","La Peregrina"));
+
+        asksList.add(new Ask("¿Qué obra escribió Federico García Lorca basándose en los cruentos sucesos ocurridos en el Cortijo del Fraile en Almería?","“La casa de Bernarda Alba”","“Yerma”","“Bodas de sangre”","“Doña Rosita la soltera”","“Bodas de sangre”"));
 
     }
 
