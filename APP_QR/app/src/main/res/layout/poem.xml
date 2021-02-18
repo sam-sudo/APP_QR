@@ -1,7 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:background="#F00000"
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="#203040"
     android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_margin="10dp"
+        android:textSize="30dp"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:text="POEMA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></TextView>
+
+    <ScrollView
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="400dp">
+        <TextView
+            android:layout_margin="10dp"
+            android:textAlignment="center"
+            android:text="ATARDECER EN CÁDIZ \n\n\n Y como el recuerdo, a veces, hace bien,\n
+yo te llevo hasta él, vuelvo\n
+a volcarlo en ti.\n\n\n
+Estábamos\naquellos días soñando en Cádiz\n
+nuestra boda, nuestra unión, la más bella\n
+historia del mundo. Acodados\n
+y frente a la luz final del día\n
+comenzaste a cantar.\n
+\n\n
+Caracolas, niños\n
+de Cádiz sorprendidos, pescadores\n
+con un mundo a cuestas, de tus labios partieron\n
+haciéndome feliz.\n
+\n\n
+Alrededor la tarde\n
+se perdía de vista, nos dejaba\n
+con el silencio natural\n
+de nuestra turbación, andaba\n
+por la bahía muy leve,\n
+de puntillas para no despertarnos,\n
+como gozosa por nuestro amor.\n
+\n\n
+Había que darle gracias a Dios, gracias\n
+a las aguas, gracias\n
+a los mariscadores que silbaron\n
+uno de nuestros besos; a San Fernando,\n
+a Rota por mirar con disimulo.\n
+\n\n
+Abiertamente,\n
+y como un viento,\n
+nos fue entrando el mar.\n
+\n\n
+Dijiste\n
+que el mar…\n
+\n\n
+Por ti\n
+nada estaba tan lejos, tan imposible\n
+como otras veces. Pensé\n
+que ya no me servía el miedo de perderte\n
+y lo tiré a las aguas. Pensé otra vez\n
+y se me cayó al agua el pecho.\n
+Iba entre brisas, y con tu cante -Alegrías\n
+de Cádiz- vencido, hecho espumas,\n
+incapaz de mirar cuando, de pronto,\n
+se fue poniendo roja el agua, roja\n
+toda la bahía, como\n
+si tus labios hubiesen repartido\n
+entre las olas el cantar."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"></TextView>
+
+
+
+
+    </ScrollView>
+
+    <EditText
+        android:id="@+id/autor"
+        android:textColorHint="#B1B1B1"
+        android:textColor="@color/white"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:hint="NOMBRE Y PRIMER APELLIDO"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></EditText>
+
+    <Button
+        android:textColor="@color/white"
+        android:background="@drawable/btn_color_fondo"
+        android:id="@+id/enviar"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:text="Enviar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></Button>
+
+
+
+</LinearLayout>
