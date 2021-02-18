@@ -14,9 +14,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/video"></VideoView>
     <Button
+        android:visibility="invisible"
         android:textColor="@color/white"
         android:background="@drawable/btn_color_fondo"
-        android:enabled="false"
         android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

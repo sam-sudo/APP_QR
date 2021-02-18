@@ -44,7 +44,7 @@ public class StartVideo extends AppCompatActivity {
         videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mediaPlayer) {
-                hiddeMe.setEnabled(true);
+                hiddeMe.setVisibility(View.VISIBLE);
             }
         });
 
