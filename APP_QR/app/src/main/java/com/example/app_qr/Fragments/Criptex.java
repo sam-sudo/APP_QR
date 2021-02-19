@@ -7,6 +7,7 @@ import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Handler;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
@@ -64,6 +65,7 @@ public class Criptex extends Fragment implements NumberPicker.OnValueChangeListe
     private MediaPlayer mp;
     ArrayAdapter<String> adapter;
     static int contadorTokens = 0;
+    int oneTine = 0;
 
     @Nullable
     @Override
@@ -100,7 +102,11 @@ public class Criptex extends Fragment implements NumberPicker.OnValueChangeListe
         super.onResume();
 //        Toast.makeText(getContext(),"resume",Toast.LENGTH_SHORT).show();
         adapter.notifyDataSetChanged();
+        oneTine = 0;
+        Log.d("failed", "LIMPIANDO" + oneTine);
+
     }
+
 
 
 
@@ -255,9 +261,17 @@ public class Criptex extends Fragment implements NumberPicker.OnValueChangeListe
                         Log.i("last token", lastToken);
 
                         if(continueWhithTheOrder(token)){
-                            Log.d("failed", "receiveDetections: INTENT");
-                            Intent intent = new Intent(getContext(), Ask_activity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                            startActivity(intent);
+
+                            Log.d("failed", "receiveDetections: PRE --- INTENT");
+                            if(oneTine==0){
+                                Log.d("failed", "receiveDetections: INTENT");
+                                Intent intent = new Intent(getContext(), Ask_activity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                startActivity(intent);
+                                oneTine ++;
+                            }
+
+
+
 
                         }else {
                             Log.d("prueba", "hemos entrado");
@@ -274,8 +288,9 @@ public class Criptex extends Fragment implements NumberPicker.OnValueChangeListe
                             public void run() {
                                 try {
                                     synchronized (this) {
-                                        wait(5000);
+                                        wait(3000);
                                         // limpiamos el token
+
                                         lastToken = "";
                                     }
                                 } catch (InterruptedException e) {

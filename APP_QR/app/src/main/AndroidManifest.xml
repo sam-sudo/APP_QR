@@ -21,21 +21,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-<<<<<<< HEAD
-        <activity android:name=".GameOver"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".Main"
-            android:screenOrientation="portrait"  ></activity>
-        <activity android:name=".Ask_activity"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".StartVideo"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".Finish"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".Poem"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".Login"
-=======
+
         <activity
             android:name=".GameOver"
             android:screenOrientation="portrait" />
@@ -59,7 +45,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".Login"
->>>>>>> e7a4f31ecd157111c40850452e212c50e84ef830
+
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

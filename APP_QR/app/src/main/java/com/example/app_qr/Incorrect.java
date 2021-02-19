@@ -27,7 +27,7 @@ public class Incorrect extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.incorrect);
 
-        startTimeInMilis = 30000;
+        startTimeInMilis = 5000;
         countDown = (TextView)findViewById(R.id.cronometro2);
         startCountDownTime();
     }
@@ -53,5 +53,10 @@ public class Incorrect extends AppCompatActivity {
         textFormater = String.format(Locale.getDefault(), "%02d:%02d", minutos, segundos);
 
         countDown.setText(textFormater);
+    }
+
+    @Override
+    public void onBackPressed() {
+
     }
 }
