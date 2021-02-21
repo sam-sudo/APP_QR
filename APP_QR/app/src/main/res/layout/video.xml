@@ -8,6 +8,15 @@
     android:gravity="center"
     android:orientation="vertical">
 
+    <TextView
+        android:layout_margin="10dp"
+        android:textAlignment="center"
+        android:textSize="40dp"
+        android:textColor="@color/white"
+        android:text="INSTRUCCIONES"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></TextView>
+
     <VideoView
         android:layout_margin="10dp"
         android:layout_width="match_parent"

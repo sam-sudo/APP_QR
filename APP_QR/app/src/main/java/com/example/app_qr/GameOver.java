@@ -8,7 +8,6 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.example.app_qr.Fragments.Criptex;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
@@ -26,8 +25,8 @@ public class GameOver extends AppCompatActivity {
 
         // Create a new user with a first and last name
         Map<String, Object> users = new HashMap<>();
-        users.put("username", Login.nombreStr);
-        users.put("lastname", Login.apellidosStr);
+        users.put("jugador1", Login.jugador1);
+        users.put("jugador2", Login.jugador2);
         users.put("time", "No finalizado");
         users.put("group", Login.grupoStr);
 

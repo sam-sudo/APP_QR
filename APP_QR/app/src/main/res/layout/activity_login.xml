@@ -27,9 +27,8 @@
             android:padding="15dp"
             android:background="@drawable/input"
             android:textColor="#FFFFFF"
-            android:hint="Nombre"
-            android:text="sam"
-            android:id="@+id/nombre"
+            android:hint="Nombre y apellidos jugador 1"
+            android:id="@+id/player1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"></EditText>
 
@@ -39,9 +38,8 @@
             android:padding="15dp"
             android:background="@drawable/input"
             android:textColor="#FFFFFF"
-            android:text="sam"
-            android:hint="Apellidos"
-            android:id="@+id/apellidos"
+            android:hint="Nombre y apellidos jugador 2"
+            android:id="@+id/player2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"></EditText>
 
@@ -66,9 +64,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"></Spinner>
         </LinearLayout>
-
-
-
         <Button
             android:textColor="#FFFFFF"
             android:layout_margin="10dp"
@@ -77,6 +72,40 @@
             android:id="@+id/continuar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"></Button>
+
+
+        <TextView
+            android:textColor="#B1B1B1"
+            android:textAlignment="center"
+            android:text='\@adrian_avila_torres     @alberto._001'
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></TextView>
+        <TextView
+            android:textColor="#B1B1B1"
+            android:textAlignment="center"
+            android:text='\@samuel09_sw'
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></TextView>
+
+
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_gravity="bottom"
+        android:gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:gravity="bottom|end"
+            android:layout_marginRight="10dp"
+            android:textColor="#B1B1B1"
+            android:text="V1.0"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></TextView>
     </LinearLayout>
 
 

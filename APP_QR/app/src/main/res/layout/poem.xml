@@ -20,7 +20,6 @@
         android:layout_width="match_parent"
         android:layout_height="400dp">
         <TextView
-            android:layout_margin="10dp"
             android:textAlignment="center"
             android:text="ATARDECER EN CÁDIZ \n\n\n Y como el recuerdo, a veces, hace bien,\n
 yo te llevo hasta él, vuelvo\n
@@ -73,31 +72,32 @@ entre las olas el cantar."
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#FFFFFF"></TextView>
-
-
-
-
     </ScrollView>
 
-    <EditText
-        android:id="@+id/autor"
-        android:textColorHint="#B1B1B1"
-        android:textColor="@color/white"
-        android:layout_margin="10dp"
-        android:padding="10dp"
-        android:hint="NOMBRE Y PRIMER APELLIDO"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></EditText>
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/autor"
+            android:textColorHint="#B1B1B1"
+            android:textColor="@color/white"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:hint="NOMBRE Y PRIMER APELLIDO"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></EditText>
 
-    <Button
-        android:textColor="@color/white"
-        android:background="@drawable/btn_color_fondo"
-        android:id="@+id/enviar"
-        android:layout_margin="10dp"
-        android:padding="10dp"
-        android:text="Enviar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"></Button>
+        <Button
+            android:textColor="@color/white"
+            android:background="@drawable/btn_color_fondo"
+            android:id="@+id/enviar"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="Enviar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></Button>
+    </LinearLayout>
 
 
 

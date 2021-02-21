@@ -2,7 +2,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:background="#E8284E"
+    android:background="#203040"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:textSize="40dp"
         android:textStyle="bold"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:gravity="center"
         android:text="¿PREGUNTA?">
 
@@ -21,7 +21,7 @@
 
     <TextView
         android:layout_margin="10dp"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:id="@+id/question"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -47,18 +47,26 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <RadioButton android:id="@+id/req0"
+                    android:buttonTint="@color/white"
+                    android:textColor="@color/white"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="respuesta 1"/>
                 <RadioButton android:id="@+id/req1"
+                    android:buttonTint="@color/white"
+                    android:textColor="@color/white"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="respuesta 2"/>
                 <RadioButton android:id="@+id/req2"
+                    android:buttonTint="@color/white"
+                    android:textColor="@color/white"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="respuesta 3"/>
                 <RadioButton android:id="@+id/req3"
+                    android:buttonTint="@color/white"
+                    android:textColor="@color/white"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="respuesta 3"/>

@@ -4,7 +4,6 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -47,8 +46,8 @@ public class Poem extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "NOMBRE CORRECTO", Toast.LENGTH_SHORT).show();
                     // Create a new user with a first and last name
                     Map<String, Object> users = new HashMap<>();
-                    users.put("username", Login.nombreStr);
-                    users.put("lastname", Login.apellidosStr);
+                    users.put("jugador1", Login.jugador1);
+                    users.put("jugador2", Login.jugador2);
                     users.put("time", Criptex.textFormater);
                     users.put("group", Login.grupoStr);
 

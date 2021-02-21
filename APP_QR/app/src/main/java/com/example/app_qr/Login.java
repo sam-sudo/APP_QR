@@ -2,9 +2,9 @@ package com.example.app_qr;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
+import android.Manifest;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.TranslateAnimation;
@@ -16,15 +16,14 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.app_qr.Auxiliar.AskAuxiliar;
-
 public class Login extends AppCompatActivity {
-    EditText nombre, apellidos;
+    private final int MY_PERMISSIONS_REQUEST_CAMERA = 1;
+    EditText player1, player2;
     Spinner grupo;
     Button continuar;
     ImageView imagen;
     TextView selecciona;
-    public static String nombreStr, apellidosStr, grupoStr;
+    public static String jugador1, jugador2, grupoStr;
 
     //static public String[] lista = {"1º Bachiller","2º Bachiller","1º ESO", "2º ESO", "3º ESO", "4º ESO"};
     @Override
@@ -32,12 +31,21 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        nombre = (EditText) findViewById(R.id.nombre);
-        apellidos = (EditText) findViewById(R.id.apellidos);
+        player1 = (EditText) findViewById(R.id.player1);
+        player2 = (EditText) findViewById(R.id.player2);
         grupo = (Spinner) findViewById(R.id.spinner);
         continuar = (Button) findViewById(R.id.continuar);
         imagen = (ImageView) findViewById(R.id.imagen);
         selecciona = (TextView) findViewById(R.id.selecciona);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            // verificamos la version de ANdroid que sea al menos la M para mostrar
+            // el dialog de la solicitud de la camara
+            if (shouldShowRequestPermissionRationale(
+                    Manifest.permission.CAMERA)) ;
+            requestPermissions(new String[]{Manifest.permission.CAMERA},
+                    MY_PERMISSIONS_REQUEST_CAMERA);
+        }
 
         ArrayAdapter adapter = ArrayAdapter.createFromResource(this, R.array.Spinner_items, R.layout.color_spinner_layout);
 
@@ -47,11 +55,11 @@ public class Login extends AppCompatActivity {
 
         TranslateAnimation an1 = new TranslateAnimation(-1600.0f, 0.0f, 0.0f, 0.0f);
         an1.setDuration(1000);
-        nombre.startAnimation(an1);
+        player1.startAnimation(an1);
 
         TranslateAnimation an3 = new TranslateAnimation(1600.0f, 0.0f, 0.0f, 0.0f);
         an3.setDuration(1000);
-        apellidos.startAnimation(an3);
+        player2.startAnimation(an3);
 
         TranslateAnimation an4 = new TranslateAnimation(00.0f, 0.0f, 1600.0f, 0.0f);
         an4.setDuration(2000);
@@ -66,10 +74,10 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                nombreStr = nombre.getText().toString();
-                apellidosStr = apellidos.getText().toString();
+                jugador1 = player1.getText().toString();
+                jugador2 = player2.getText().toString();
                 grupoStr = grupo.getSelectedItem().toString();
-                if (!validate(nombreStr, apellidosStr)) {
+                if (!validate(jugador1, jugador2)) {
                     Intent intent = new Intent(getApplicationContext(), StartVideo.class);
                     startActivity(intent);
                     finish();

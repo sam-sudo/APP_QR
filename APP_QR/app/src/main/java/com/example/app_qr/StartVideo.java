@@ -23,7 +23,7 @@ import android.widget.VideoView;
 
 public class StartVideo extends AppCompatActivity {
     VideoView videoView;
-    private final int MY_PERMISSIONS_REQUEST_CAMERA = 1;
+
     Button hiddeMe;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -47,19 +47,6 @@ public class StartVideo extends AppCompatActivity {
                 hiddeMe.setVisibility(View.VISIBLE);
             }
         });
-
-
-
-
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            // verificamos la version de ANdroid que sea al menos la M para mostrar
-            // el dialog de la solicitud de la camara
-            if (shouldShowRequestPermissionRationale(
-                    Manifest.permission.CAMERA)) ;
-            requestPermissions(new String[]{Manifest.permission.CAMERA},
-                    MY_PERMISSIONS_REQUEST_CAMERA);
-        }
         /*
         new Handler().postDelayed(new Runnable() {
             @Override
