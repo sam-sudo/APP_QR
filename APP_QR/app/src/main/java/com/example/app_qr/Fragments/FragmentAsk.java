@@ -43,11 +43,12 @@ public class FragmentAsk extends Fragment implements View.OnClickListener {
 
     FloatingActionButton btn;
     TextView question;
-    RadioButton req0;
-    RadioButton req1;
-    RadioButton req2;
-    RadioButton req3;
-    ImageView imgReq;
+    public static RadioGroup radioGroup;
+    public static RadioButton req0;
+    public static RadioButton req1;
+    public static RadioButton req2;
+    public static RadioButton req3;
+    public static ImageView imgReq;
     boolean correctResponse = false;
     Ask ask = new Ask();
     Ask randomAsk = new Ask();
@@ -64,11 +65,24 @@ public class FragmentAsk extends Fragment implements View.OnClickListener {
         req2 = view.findViewById(R.id.req2);
         req3 = view.findViewById(R.id.req3);
         imgReq = view.findViewById(R.id.imgReq);
+        radioGroup = (RadioGroup)view.findViewById(R.id.radioGroup1);
 
         req0.setOnClickListener(this);
         req1.setOnClickListener(this);
         req2.setOnClickListener(this);
         req3.setOnClickListener(this);
+
+        req0.setChecked(false);
+        req1.setChecked(false);
+        req2.setChecked(false);
+        req3.setChecked(false);
+
+        req0.clearFocus();
+        req1.clearFocus();
+        req2.clearFocus();
+        req3.clearFocus();
+
+        radioGroup.clearCheck();
 
 
 
@@ -169,15 +183,29 @@ public class FragmentAsk extends Fragment implements View.OnClickListener {
 
         switch(view.getId()) {
             case R.id.req0:
+                req0.setChecked(true);
+                textoView = (String) ((RadioButton) view).getText();
+                Log.d("response","-----** "+textoView);
+                break;
             case R.id.req1:
+                req1.setChecked(true);
+                textoView = (String) ((RadioButton) view).getText();
+                Log.d("response","-----** "+textoView);
+                break;
             case R.id.req2:
+                req2.setChecked(true);
+                textoView = (String) ((RadioButton) view).getText();
+                Log.d("response","-----** "+textoView);
+                break;
             case R.id.req3:
-                if (checked){
+                req3.setChecked(true);
+
 
                     textoView = (String) ((RadioButton) view).getText();
                     Log.d("response","-----** "+textoView);
+                    break;
 
-                }
+
 
         }
 
@@ -185,7 +213,11 @@ public class FragmentAsk extends Fragment implements View.OnClickListener {
 
         if(textoView.equals(ask.getReqCorrect())){
             correctResponse = true;
+        }else {
+            correctResponse = false;
         }
+
+
     }
 
     private void generateAsk(Ask ask) {
@@ -204,10 +236,10 @@ public class FragmentAsk extends Fragment implements View.OnClickListener {
         req3.setText(tex3);
         imgReq.setImageResource(img);
 
-        req0.setChecked(false);
-        req1.setChecked(false);
-        req2.setChecked(false);
-        req3.setChecked(false);
+//        req0.setChecked(false);
+//        req1.setChecked(false);
+//        req2.setChecked(false);
+//        req3.setChecked(false);
 
 
     }

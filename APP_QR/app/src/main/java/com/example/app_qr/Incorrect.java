@@ -15,6 +15,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.app_qr.Fragments.FragmentAsk;
+
 import java.util.Locale;
 
 public class Incorrect extends AppCompatActivity {
@@ -30,6 +32,17 @@ public class Incorrect extends AppCompatActivity {
         startTimeInMilis = 30000;
         countDown = (TextView)findViewById(R.id.cronometro2);
         startCountDownTime();
+
+        FragmentAsk.req0.setChecked(false);
+        FragmentAsk.req1.setChecked(false);
+        FragmentAsk.req2.setChecked(false);
+        FragmentAsk.req3.setChecked(false);
+
+        FragmentAsk.req0.clearFocus();
+        FragmentAsk.req1.clearFocus();
+        FragmentAsk.req2.clearFocus();
+        FragmentAsk.req3.clearFocus();
+        FragmentAsk.radioGroup.clearCheck();
     }
 
     private void startCountDownTime() {//Este metodo inicia la cuenta atras
@@ -58,5 +71,20 @@ public class Incorrect extends AppCompatActivity {
     @Override
     public void onBackPressed() {
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        FragmentAsk.req0.setChecked(false);
+        FragmentAsk.req1.setChecked(false);
+        FragmentAsk.req2.setChecked(false);
+        FragmentAsk.req3.setChecked(false);
+
+        FragmentAsk.req0.clearFocus();
+        FragmentAsk.req1.clearFocus();
+        FragmentAsk.req2.clearFocus();
+        FragmentAsk.req3.clearFocus();
+        FragmentAsk.radioGroup.clearCheck();
     }
 }
