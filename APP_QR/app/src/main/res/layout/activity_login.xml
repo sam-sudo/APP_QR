@@ -75,37 +75,29 @@
 
 
         <TextView
+            android:id="@+id/insta1"
             android:textColor="#B1B1B1"
             android:textAlignment="center"
             android:text='\@adrian_avila_torres     @alberto._001'
             android:layout_width="match_parent"
             android:layout_height="wrap_content"></TextView>
         <TextView
+            android:id="@+id/insta2"
             android:textColor="#B1B1B1"
             android:textAlignment="center"
             android:text='\@samuel09_sw'
             android:layout_width="match_parent"
             android:layout_height="wrap_content"></TextView>
-
-
-
-
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_gravity="bottom"
-        android:gravity="bottom"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
         <TextView
+            android:id="@+id/version"
             android:gravity="bottom|end"
             android:layout_marginRight="10dp"
             android:textColor="#B1B1B1"
             android:text="V1.0"
             android:layout_width="match_parent"
             android:layout_height="match_parent"></TextView>
+
+
     </LinearLayout>
 
 

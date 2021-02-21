@@ -22,7 +22,7 @@ public class Login extends AppCompatActivity {
     Spinner grupo;
     Button continuar;
     ImageView imagen;
-    TextView selecciona;
+    TextView selecciona, insta1, insta2, version;
     public static String jugador1, jugador2, grupoStr;
 
     //static public String[] lista = {"1º Bachiller","2º Bachiller","1º ESO", "2º ESO", "3º ESO", "4º ESO"};
@@ -37,6 +37,9 @@ public class Login extends AppCompatActivity {
         continuar = (Button) findViewById(R.id.continuar);
         imagen = (ImageView) findViewById(R.id.imagen);
         selecciona = (TextView) findViewById(R.id.selecciona);
+        insta1 = (TextView)findViewById(R.id.insta1);
+        insta2 = (TextView)findViewById(R.id.insta2);
+        version = (TextView)findViewById(R.id.version);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             // verificamos la version de ANdroid que sea al menos la M para mostrar
@@ -66,6 +69,9 @@ public class Login extends AppCompatActivity {
         grupo.startAnimation(an4);
         continuar.startAnimation(an4);
         selecciona.startAnimation(an4);
+        insta1.startAnimation(an4);
+        insta2.startAnimation(an4);
+        version.startAnimation(an4);
 
         adapter.setDropDownViewResource(R.layout.spinner_dropdown_layout);
         grupo.setAdapter(adapter);
