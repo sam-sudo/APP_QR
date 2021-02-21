@@ -103,6 +103,7 @@ public class FragmentAsk extends Fragment implements View.OnClickListener {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             Log.d("circuitList", "onClick: contador" + Criptex.contadorTokens);
+                            Log.d("circuitList", "onClick: contador" + Criptex.contadorTokens);
                             Criptex.contadorTokens++;
                             AskAuxiliar.askDoneList.add(randomAsk);
                             Log.d("circuitList", "onClick: contador token " + AskAuxiliar.askDoneList.size());

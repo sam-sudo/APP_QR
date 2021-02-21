@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#E8284E">
+    android:background="#203040">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -11,7 +11,7 @@
         android:layout_height="wrap_content">
         <com.google.android.material.tabs.TabLayout
             android:theme="@style/ColorListView"
-            android:background="#E8284E"
+            android:background="#203040"
             android:layout_weight="1"
             android:id="@+id/tabs1"
             android:layout_width="match_parent"

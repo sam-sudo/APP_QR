@@ -27,7 +27,7 @@ public class Incorrect extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.incorrect);
 
-        startTimeInMilis = 5000;
+        startTimeInMilis = 30000;
         countDown = (TextView)findViewById(R.id.cronometro2);
         startCountDownTime();
     }

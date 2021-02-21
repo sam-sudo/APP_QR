@@ -84,7 +84,7 @@ entre las olas el cantar."
             android:textColor="@color/white"
             android:layout_margin="10dp"
             android:padding="10dp"
-            android:hint="NOMBRE Y PRIMER APELLIDO"
+            android:hint="NOMBRE Y PRIMER APELLIDO DEL AUTOR"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"></EditText>
 
