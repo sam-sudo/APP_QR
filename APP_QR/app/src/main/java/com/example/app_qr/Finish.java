@@ -41,8 +41,8 @@ public class Finish extends AppCompatActivity {
         builder.setPositiveButton("Salir", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-
                 finishAffinity();
+                System.exit(0);
             }
         });
 
