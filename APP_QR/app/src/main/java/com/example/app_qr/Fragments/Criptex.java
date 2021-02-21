@@ -71,7 +71,7 @@ public class Criptex extends Fragment implements NumberPicker.OnValueChangeListe
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.criptex , container ,false);
-        startTimeInMilis = 1200000;
+        startTimeInMilis = 1500000;
         startCountDownTime();
 
 
