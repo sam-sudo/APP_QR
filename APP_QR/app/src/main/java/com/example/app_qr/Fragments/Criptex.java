@@ -53,6 +53,7 @@ public class Criptex extends Fragment implements NumberPicker.OnValueChangeListe
     private SurfaceView cameraView;
     NumberPicker numberPicker1, numberPicker2, numberPicker3, numberPicker4, numberPicker5, numberPicker6;
     public static String textFormater = "";
+    public static String tiempoPush = "";
 
 
     public static long startTimeInMilis;//1200000
@@ -66,6 +67,7 @@ public class Criptex extends Fragment implements NumberPicker.OnValueChangeListe
     ArrayAdapter<String> adapter;
     static int contadorTokens = 0;
     int oneTine = 0;
+    public static int milis = 1500000;
 
     @Nullable
     @Override
@@ -363,6 +365,15 @@ public class Criptex extends Fragment implements NumberPicker.OnValueChangeListe
        }
         Log.d("circuitList", "" + circuitList);
 
+
+    }
+
+    public static String timerFinish(){
+        long tiempoFinal = milis - startTimeInMilis;
+        int minutos = (int) (tiempoFinal / 1000) / 60;
+        int segundos = (int) (tiempoFinal / 1000) % 60;
+        tiempoPush = String.format(Locale.getDefault(), "%02d:%02d", minutos, segundos);
+        return tiempoPush;
 
     }
 //  circuit.add((int) (Math.random()*6)+1);

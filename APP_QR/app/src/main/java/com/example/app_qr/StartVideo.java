@@ -38,7 +38,7 @@ public class StartVideo extends AppCompatActivity {
 
         MediaController mediaController = new MediaController(this);
         videoView.setMediaController(mediaController);
-        mediaController.setAnchorView(videoView);
+        //mediaController.setAnchorView(videoView);
         videoView.start();
 
         videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
